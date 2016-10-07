@@ -1,10 +1,10 @@
-## Exercise 8: Cleanup of Azure resources
+# Exercise 8: Cleanup of Azure resources
 
 Duration: 10 mins
 
 Synopsis: In this exercise, attendees will de-provision any Azure resources that were created in support of the lab.
 
-### Task 1: Delete Resource Group
+## Task 1: Delete Resource Group
 
 1. Using the Azure Portal, navigate to the Resource Group that you used throughout the lab by clicking on **Resource Groups** in the left nav.
 
