@@ -16,7 +16,6 @@ Synopsis: In this exercise, attendees will implement a classification experiment
   1. Note that you will want to unblock the zip file before extracting files from it. Do this by right clicking on it, selecting **Properties** , and then perform the unblock from the resulting dialog.
 3. Extract the ZIP and verify you have the following files:
 
-1.
   - FlightDelaysWithAirportCodes.csv
   - FlightWeatherWithAirportCodes.csv
   - AirportCodeLocationClean.csv
