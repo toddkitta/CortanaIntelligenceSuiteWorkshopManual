@@ -1,10 +1,10 @@
-## Exercise 4: Operationalize ML Scoring with Azure ML and Data Factory
+# Exercise 4: Operationalize ML Scoring with Azure ML and Data Factory
 
 Duration: 20 mins
 
 Synopsis: In this exercise, attendees will extend the Data Factory service to operationalize the scoring of data using the previously created ML model.
 
-### Task 1: Create Azure ML Linked Service
+## Task 1: Create Azure ML Linked Service
 
 1. Go back to the **Azure Data Factory** service blade.
 2. Click on the **Author and deploy** from **Actions** section.
@@ -45,7 +45,7 @@ Synopsis: In this exercise, attendees will extend the Data Factory service to op
     ![Screenshot](images/create_azure_ml_linked_service_4.png)
 1. Click **Deploy**.
 
-### Task 2: Create Azure ML Input Dataset
+## Task 2: Create Azure ML Input Dataset
 
 1. Click on **…More**.
 
@@ -79,7 +79,7 @@ Synopsis: In this exercise, attendees will extend the Data Factory service to op
     ```
 1. Click Deploy.
 
-### Task 3: Create Azure ML Scored Dataset
+## Task 3: Create Azure ML Scored Dataset
 
 1. Click on **…More**.
 
@@ -112,7 +112,7 @@ Synopsis: In this exercise, attendees will extend the Data Factory service to op
     ```
 1. Click **Deploy**.
 
-### Task 4: Create Azure ML Predictive Pipeline
+## Task 4: Create Azure ML Predictive Pipeline
 
 1. Click on **…More**.
 
@@ -170,7 +170,7 @@ Synopsis: In this exercise, attendees will extend the Data Factory service to op
 1. Make sure to change the **start** to today&#39;s date and **end** to today + 1 date.
 2. Click **Deploy**.
 
-### Task 5: Monitor Your Pipeline Activities
+## Task 5: Monitor Your Pipeline Activities
 
 1. Close the current blade by clicking on the **X** from the top right corner of the blade.
 2. Click on the **Monitor &amp; Manage** from the **Actions** section.
