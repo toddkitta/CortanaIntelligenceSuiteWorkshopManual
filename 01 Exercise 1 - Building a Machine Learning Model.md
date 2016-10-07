@@ -7,13 +7,13 @@ Synopsis: In this exercise, attendees will implement a classification experiment
 This exercise has 8 tasks:
 
 -[Task 1: Navigate to Machine Learning Studio](#task-1-navigate-to-machine-learning-studio)
--Task 2: Upload the Sample Datasets
--Task 3: Start a New Experiment
--Task 4: Prepare the Weather Data
--Task 5: Join the Flight and Weather Datasets
--Task 6: Train the Model
--Task 7: Operationalize the Experiment
--Task 8: Note Web Service Integration Information
+-[Task 2: Upload the Sample Datasets](task-2-upload-the-sample-datasets)
+-[Task 3: Start a New Experiment](task-3-start-a-new-experiment)
+-[Task 4: Prepare the Weather Data](Task-4-prepare-the-weather-data)
+-[Task 5: Join the Flight and Weather Datasets](Task-5-join-the-flight-and-weather-datasets)
+-[Task 6: Train the Model](task-6-train-the-model)
+-[Task 7: Operationalize the Experiment](task-7-operationalize-the-experiment)
+-[Task 8: Note Web Service Integration Information](task-8-note-web-service-integration-information)
 
 ## Task 1: Navigate to Machine Learning Studio
 
