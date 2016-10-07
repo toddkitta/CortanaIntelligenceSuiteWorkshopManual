@@ -23,29 +23,19 @@ Synopsis: In this exercise, attendees will extend the Data Factory service to op
 2. In the new window, be sure change the JSON file to match the following:
   1. In the new window, be sure change the JSON file to match the following or copy the below JSON text and paste into the browser window. You can also copy this from **Listing 1** in [http://aka.ms/adfcode](http://aka.ms/adfcode).
   2. Be sure to follow steps 7 to 13 to obtain **mlEndPoint** URL and **apiKey** value.
-
-{
-
-   &quot;name&quot;: &quot;AzureMLLinkedService&quot;,
-
-   &quot;properties&quot;: {
-
-      &quot;type&quot;: &quot;AzureML&quot;,
-
-      &quot;description&quot;: &quot;&quot;,
-
-      &quot;typeProperties&quot;: {
-
-         &quot;mlEndpoint&quot;: &quot;&lt;Specify the batch scoring URL&gt;&quot;,
-
-         &quot;apiKey&quot;: &quot;&lt;Specify the published workspace model&#39;s API key&gt;&quot;
-
+      ```json
+      {
+          "name": "AzureMLLinkedService",
+          "properties": {
+              "type": "AzureML",
+              "description": "",
+              "typeProperties": {
+                  "mlEndpoint": "<Specify the batch scoring URL>",
+                  "apiKey": "<Specify the published workspace model's API key>"
+              }
+          }
       }
-
-   }
-
-}
-
+      ```
 1. Open a browser and navigate to your ML Studio and click **Web Services**. You can always get there by going to [https://studio.azureml.net/](https://studio.azureml.net/).
 2. Click on your web service.
 3. On this page, take note of the API key.  Copy the **API key** value and paste it in for the **apiKey** above in the JSON.
