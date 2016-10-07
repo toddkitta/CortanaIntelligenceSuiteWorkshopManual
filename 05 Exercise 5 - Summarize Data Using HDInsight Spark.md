@@ -92,7 +92,7 @@ Synopsis: In this exercise, attendees will prepare a summary of flight delay dat
 
     ```scala
     val summary = sqlContext.sql("SELECT  OriginAirportCode, OriginLatLong, Month, Day, Hour, Sum(DelayPredicted) NumDelays, Avg(DelayProbability) AvgDelayProbability FROM FlightDelays WHERE Month = 4 GROUP BY OriginAirportCode, OriginLatLong, Month, Day, Hour Having Sum(DelayPredicted) > 1")
-    summary.saveAsTable("FlightDelaysSummary")    ```
+    summary.saveAsTable("FlightDelaysSummary")
     ```
 
 1. Click the **Play** icon in the top of the screen to execute this code.
