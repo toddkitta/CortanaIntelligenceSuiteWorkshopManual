@@ -6,7 +6,7 @@ Synopsis: In this exercise, attendees will implement a classification experiment
 
 This exercise has 8 tasks:
 
--[Task 1: Navigate to Machine Learning Studio](#Task-1-Navigate-to-Machine-Learning-Studio)
+-[Task 1: Navigate to Machine Learning Studio](#task-1-navigate-to-machine-learning-studio)
 -Task 2: Upload the Sample Datasets
 -Task 3: Start a New Experiment
 -Task 4: Prepare the Weather Data
