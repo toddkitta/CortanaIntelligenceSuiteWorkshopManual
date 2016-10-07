@@ -23,19 +23,20 @@ Synopsis: In this exercise, attendees will extend the Data Factory service to op
 2. In the new window, be sure change the JSON file to match the following:
   1. In the new window, be sure change the JSON file to match the following or copy the below JSON text and paste into the browser window. You can also copy this from **Listing 1** in [http://aka.ms/adfcode](http://aka.ms/adfcode).
   2. Be sure to follow steps 7 to 13 to obtain **mlEndPoint** URL and **apiKey** value.
-      ```json
-      {
-          "name": "AzureMLLinkedService",
-          "properties": {
-              "type": "AzureML",
-              "description": "",
-              "typeProperties": {
-                  "mlEndpoint": "<Specify the batch scoring URL>",
-                  "apiKey": "<Specify the published workspace model's API key>"
-              }
-          }
-      }
-      ```
+
+    ```json
+    {
+        "name": "AzureMLLinkedService",
+        "properties": {
+            "type": "AzureML",
+            "description": "",
+            "typeProperties": {
+                "mlEndpoint": "<Specify the batch scoring URL>",
+                "apiKey": "<Specify the published workspace model's API key>"
+            }
+        }
+    }
+    ```
 1. Open a browser and navigate to your ML Studio and click **Web Services**. You can always get there by going to [https://studio.azureml.net/](https://studio.azureml.net/).
 2. Click on your web service.
 3. On this page, take note of the API key.  Copy the **API key** value and paste it in for the **apiKey** above in the JSON.
@@ -63,43 +64,27 @@ Synopsis: In this exercise, attendees will extend the Data Factory service to op
 1. Select **Azure Blob storage** from the list.
 2. In the new window, be sure change the JSON file to match the following or copy the below JSON text and paste into the browser window. You can also copy this from **Listing 2** in [http://aka.ms/adfcode](http://aka.ms/adfcode).
 
-{
-
-   &quot;name&quot;: &quot;AzureBlobDataInPut&quot;,
-
-   &quot;properties&quot;: {
-
-      &quot;type&quot;: &quot;AzureBlob&quot;,
-
-      &quot;external&quot;: true,
-
-      &quot;linkedServiceName&quot;: &quot;OutputLinkedService-AzureBlobStorage&quot;,
-
-      &quot;typeProperties&quot;: {
-
-         &quot;fileName&quot;: &quot;FlightsAndWeather.csv&quot;,
-
-         &quot;folderPath&quot;: &quot;sparkcontainer/flights&quot;,
-
-         &quot;format&quot;: {
-
-            &quot;type&quot;: &quot;TextFormat&quot;
-
-         }
-
-      },
-
-      &quot;availability&quot;: {
-
-         &quot;frequency&quot;: &quot;Minute&quot;,
-
-         &quot;interval&quot;: 60
-
-      }
-
-   }
-
-}
+    ```json
+    {
+        "name": "AzureBlobDataInPut",
+        "properties": {
+            "type": "AzureBlob",
+            "external": true,
+            "linkedServiceName": "OutputLinkedService-AzureBlobStorage",
+            "typeProperties": {
+                "fileName": "FlightsAndWeather.csv",
+                "folderPath": "sparkcontainer/flights",
+                "format": {
+                    "type": "TextFormat"
+                }
+            },
+            "availability": {
+                "frequency": "Minute",
+                "interval": 60
+            }
+        }
+    }
+    ```
 
 1. Click Deploy.
 
@@ -116,41 +101,26 @@ Synopsis: In this exercise, attendees will extend the Data Factory service to op
 1. Select **Azure Blob storage** from the list.
 2. In the new window, be sure change the JSON file to match the following or copy the below JSON text and paste into the browser window. You can also copy this from **Listing 3** in [http://aka.ms/adfcode](http://aka.ms/adfcode).
 
-{
-
-   &quot;name&quot;: &quot;AzureBlobScoredDataOutPut&quot;,
-
-   &quot;properties&quot;: {
-
-      &quot;type&quot;: &quot;AzureBlob&quot;,
-
-      &quot;linkedServiceName&quot;: &quot;OutputLinkedService-AzureBlobStorage&quot;,
-
-      &quot;typeProperties&quot;: {
-
-         &quot;fileName&quot;: &quot;Scored\_FlightsAndWeather.csv&quot;,
-
-         &quot;folderPath&quot;: &quot;sparkcontainer/flights&quot;,
-
-         &quot;format&quot;: {
-
-            &quot;type&quot;: &quot;TextFormat&quot;
-
-         }
-
-      },
-
-      &quot;availability&quot;: {
-
-         &quot;frequency&quot;: &quot;Minute&quot;,
-
-         &quot;interval&quot;: 60
-
-      }
-
-   }
-
-}
+    ```json
+    {
+        "name": "AzureBlobScoredDataOutPut",
+        "properties": {
+            "type": "AzureBlob",
+            "linkedServiceName": "OutputLinkedService-AzureBlobStorage",
+            "typeProperties": {
+                "fileName": "Scored_FlightsAndWeather.csv",
+                "folderPath": "sparkcontainer/flights",
+                "format": {
+                    "type": "TextFormat"
+                }
+            },
+            "availability": {
+                "frequency": "Minute",
+                "interval": 60
+            }
+        }
+    }
+    ```
 
 1. Click **Deploy**.
 
@@ -166,91 +136,51 @@ Synopsis: In this exercise, attendees will extend the Data Factory service to op
 
 1. In the new window, be sure change the JSON file to match the following or copy the below JSON text and paste into the browser window. You can also copy this from **Listing 4** in [http://aka.ms/adfcode](http://aka.ms/adfcode).
 
-{
-
-    &quot;name&quot;: &quot;PredictivePipeline&quot;,
-
-    &quot;properties&quot;: {
-
-        &quot;description&quot;: &quot;Use AzureML model&quot;,
-
-        &quot;activities&quot;: [
-
-            {
-
-                &quot;type&quot;: &quot;AzureMLBatchExecution&quot;,
-
-                &quot;typeProperties&quot;: {
-
-                    &quot;webServiceInput&quot;: &quot;AzureBlobDataInPut&quot;,
-
-                    &quot;webServiceOutputs&quot;: {
-
-                        &quot;output1&quot;: &quot;AzureBlobScoredDataOutPut&quot;
-
+    ```json
+    {
+        "name": "PredictivePipeline",
+        "properties": {
+            "description": "Use AzureML model",
+            "activities": [
+                {
+                    "type": "AzureMLBatchExecution",
+                    "typeProperties": {
+                        "webServiceInput": "AzureBlobDataInPut",
+                        "webServiceOutputs": {
+                            "output1": "AzureBlobScoredDataOutPut"
+                        },
+                        "globalParameters": {}
                     },
-
-                    &quot;globalParameters&quot;: {}
-
-                },
-
-                &quot;inputs&quot;: [
-
-                    {
-
-                        &quot;name&quot;: &quot;AzureBlobDataInPut&quot;
-
-                    }
-
-                ],
-
-                &quot;outputs&quot;: [
-
-                    {
-
-                        &quot;name&quot;: &quot;AzureBlobScoredDataOutPut&quot;
-
-                    }
-
-                ],
-
-                &quot;policy&quot;: {
-
-                    &quot;timeout&quot;: &quot;02:00:00&quot;,
-
-                    &quot;concurrency&quot;: 1,
-
-                    &quot;executionPriorityOrder&quot;: &quot;NewestFirst&quot;,
-
-                    &quot;retry&quot;: 1
-
-                },
-
-                &quot;scheduler&quot;: {
-
-                    &quot;frequency&quot;: &quot;Minute&quot;,
-
-                    &quot;interval&quot;: 60
-
-                },
-
-                &quot;name&quot;: &quot;MLActivity&quot;,
-
-                &quot;description&quot;: &quot;prediction analysis on batch input&quot;,
-
-                &quot;linkedServiceName&quot;: &quot;AzureMLLinkedService&quot;
-
-            }
-
-        ],
-
-        &quot;start&quot;: &quot;2016-09-14T00:00:00Z&quot;,
-
-        &quot;end&quot;: &quot;2016-09-15T00:00:00Z&quot;
-
+                    "inputs": [
+                        {
+                            "name": "AzureBlobDataInPut"
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "name": "AzureBlobScoredDataOutPut"
+                        }
+                    ],
+                    "policy": {
+                        "timeout": "02:00:00",
+                        "concurrency": 1,
+                        "executionPriorityOrder": "NewestFirst",
+                        "retry": 1
+                    },
+                    "scheduler": {
+                        "frequency": "Minute",
+                        "interval": 60
+                    },
+                    "name": "MLActivity",
+                    "description": "prediction analysis on batch input",
+                    "linkedServiceName": "AzureMLLinkedService"
+                }
+            ],
+            "start": "2016-09-14T00:00:00Z",
+            "end": "2016-09-15T00:00:00Z"
+        }
     }
-
-}
+    ```
 
 1. Make sure to change the **start** to today&#39;s date and **end** to today + 1 date.
 2. Click **Deploy**.
