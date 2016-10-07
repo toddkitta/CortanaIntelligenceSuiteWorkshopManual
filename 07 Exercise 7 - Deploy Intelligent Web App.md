@@ -9,7 +9,6 @@ Synopsis: In this exercise, attendees will deploy an intelligent web application
 1. Navigate to [http://aka.ms/cortanawebdeploy](http://aka.ms/cortanawebdeploy) in your browser of choice, but where you are already authenticated to the Azure Portal.
 2. Read through the README information on the GitHub page.
 3. Click the **Deploy to Azure** button.
-
     ![Screenshot](images/deploy_web_app_from_github_0.png)
 
 1. On the following page, ensure the correct **Directory** and **Subscription** are selected.
