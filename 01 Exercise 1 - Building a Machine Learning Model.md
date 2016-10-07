@@ -154,13 +154,12 @@ Synopsis: In this exercise, attendees will implement a classification experiment
 
 38. Replace the default script with the following and click the checkmark to save it (press CTRL+A to select all of the text then CTRL+V to paste and then immediately click the checkmark. Don&#39;t worry if the formatting is off before hitting the checkmark.
 
-ds.flights &lt;- maml.mapInputPort(1)
-
-# Trim the columns to only those we will use for the predictive model
-
-ds.flights = ds.flights[, c(&quot;OriginAirportCode&quot;,&quot;OriginLatitude&quot;, &quot;OriginLongitude&quot;, &quot;Month&quot;, &quot;DayofMonth&quot;, &quot;CRSDepHour&quot;, &quot;DayOfWeek&quot;, &quot;Carrier&quot;, &quot;DestAirportCode&quot;, &quot;DestLatitude&quot;, &quot;DestLongitude&quot;, &quot;DepDel15&quot;)]
-
-maml.mapOutputPort(&quot;ds.flights&quot;);
+    ``` R
+    ds.flights <- maml.mapInputPort(1)
+    # Trim the columns to only those we will use for the predictive model
+    ds.flights = ds.flights[, c("OriginAirportCode","OriginLatitude", "OriginLongitude", "Month", "DayofMonth", "CRSDepHour", "DayOfWeek", "Carrier", "DestAirportCode", "DestLatitude", "DestLongitude", "DepDel15")]
+    maml.mapOutputPort("ds.flights");
+    ```
 
 39. Run the experiment to update the metadata (this may take a minute or two to complete).
 40. Right-click on the first output port of your Execute R Script module and select **Visualize**.
@@ -212,47 +211,35 @@ maml.mapOutputPort(&quot;ds.flights&quot;);
 12. In the **Properties** panel for the Execute R Script, click the &quot;double windows&quot; icon to open the script editor.
 13. Paste in the following script and click the checkmark (press CTRL+A to select all of the text then CTRL+V to paste and then click the checkmark. Don&#39;t worry if the formatting is off). This script replaces the HourlyPrecip values having T with 0.05, WindSpeed values of M with 0.0, and the SeaLevelPressure values of M with the global average pressure of 29.92. It also narrows the dataset to just the few feature columns we want to use with our model.
 
-ds.weather &lt;- maml.mapInputPort(1)
+    ``` R
+    ds.weather <- maml.mapInputPort(1)
 
-# Round weather time up to the next hour since
+    # Round weather time up to the next hour since
+    # that's the hour for which we want to use flight data
+    ds.weather$Hour = ceiling(ds.weather$Time / 100)
 
-# that&#39;s the hour for which we want to use flight data
+    # Replace any WindSpeed values of "M" with 0.005 and make the feature numeric
+    speed.num = ds.weather$WindSpeed
+    speed.num[speed.num == "M"] = 0.005
+    speed.num = as.numeric(speed.num)
+    ds.weather$WindSpeed = speed.num 
 
-ds.weather$Hour = ceiling(ds.weather$Time / 100)
+    # Replace any SeaLevelPressure values of "M" with 29.92 (the average pressure) and make the feature numeric
+    pressure.num = ds.weather$SeaLevelPressure
+    pressure.num[pressure.num == "M"] = 29.92
+    pressure.num = as.numeric(pressure.num)
+    ds.weather$SeaLevelPressure = pressure.num 
 
-# Replace any WindSpeed values of &quot;M&quot; with 0.005 and make the feature numeric
+    # Adjust the HourlyPrecip variable (convert "T" (trace) to 0.005)
+    rain = ds.weather$HourlyPrecip
+    rain[rain %in% c("T")] = "0.005"
+    ds.weather$HourlyPrecip = as.numeric(rain)
 
-speed.num = ds.weather$WindSpeed
+    # Pare down the variables in the Weather dataset
+    ds.weather = ds.weather[, c("AirportCode", "Month", "Day", "Hour", "WindSpeed", "SeaLevelPressure", "HourlyPrecip")]
 
-speed.num[speed.num == &quot;M&quot;] = 0.005
-
-speed.num = as.numeric(speed.num)
-
-ds.weather$WindSpeed = speed.num
-
-# Replace any SeaLevelPressure values of &quot;M&quot; with 29.92 (the average pressure) and make the feature numeric
-
-pressure.num = ds.weather$SeaLevelPressure
-
-pressure.num[pressure.num == &quot;M&quot;] = 29.92
-
-pressure.num = as.numeric(pressure.num)
-
-ds.weather$SeaLevelPressure = pressure.num
-
-# Adjust the HourlyPrecip variable (convert &quot;T&quot; (trace) to 0.005)
-
-rain = ds.weather$HourlyPrecip
-
-rain[rain %in% c(&quot;T&quot;)] = &quot;0.005&quot;
-
-ds.weather$HourlyPrecip = as.numeric(rain)
-
-# Pare down the variables in the Weather dataset
-
-ds.weather = ds.weather[, c(&quot;AirportCode&quot;, &quot;Month&quot;, &quot;Day&quot;, &quot;Hour&quot;, &quot;WindSpeed&quot;, &quot;SeaLevelPressure&quot;, &quot;HourlyPrecip&quot;)]
-
-maml.mapOutputPort(&quot;ds.weather&quot;);
+    maml.mapOutputPort("ds.weather");
+    ```
 
 14. Run the experiment. Currently it should appear as follows:
 
