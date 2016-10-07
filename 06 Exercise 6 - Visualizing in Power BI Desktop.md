@@ -1,10 +1,10 @@
-## Exercise 6: Visualizing in Power BI Desktop
+# Exercise 6: Visualizing in Power BI Desktop
 
 Duration: 20 mins
 
 Synopsis: In this exercise, attendees will construct a report in Power BI Desktop Client that uses the map visualization to illustrate the predicted delays, using the data originally scored using Machine Learning, but summarized in a table using Spark on HDInsight.
 
-### Task 1: Connect to the Lab VM
+## Task 1: Connect to the Lab VM
 
 1. You may already be logged in to the Lab VM from a previous exercise. If so, then go the Remote Desktop session of the Lab VM and skip to Task 2. If not, then to follow steps 2-9 below to log in to the Lab VM again.
 2. From the left side of the Azure portal, click on **Browse &gt;**.
@@ -25,7 +25,7 @@ Synopsis: In this exercise, attendees will construct a report in Power BI Deskto
 
 1. Log in with the credentials you specified for the Lab VM during the deployment of the workshop prerequisites.
 
-### Task 2: Install Spark ODBC Driver
+## Task 2: Install Spark ODBC Driver
 
 1. Go to [https://aka.ms/sparkdriver](https://aka.ms/sparkdriver).
 2. Scroll down and click on **Download** button.
@@ -43,7 +43,7 @@ Synopsis: In this exercise, attendees will construct a report in Power BI Deskto
 1. Click on the **Install** button.
 2. Click on **Finish** button to close the window.
 
-### Task 3: Connect to the HDInsight Spark Using Power BI Desktop
+## Task 3: Connect to the HDInsight Spark Using Power BI Desktop
 
 1. Launch Power BI Desktop using the shortcut on the Desktop of the Lab VM.
 2. Click on **Get Data** from the left side of the welcome window.
@@ -69,7 +69,7 @@ Synopsis: In this exercise, attendees will construct a report in Power BI Deskto
 1. Select **flightdelaysummary** by checking box next to it.
 2. Click on the **Load** button from the bottom right corner of the window. It will take couple of minutes to load the data into the Power BI Desktop client.
 
-### Task 4: Create Power BI Report
+## Task 4: Create Power BI Report
 
 1. Once the data load is completed, you will find the **flightdelaysummary** to the right side of the screen under the **Fields** area.
 
