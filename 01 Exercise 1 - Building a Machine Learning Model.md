@@ -4,6 +4,17 @@ Duration: 90 mins
 
 Synopsis: In this exercise, attendees will implement a classification experiment. They will load the training data from their local machine into a dataset. Then they will explore the data to identify the primary components they should use for prediction, and use two different algorithms for predicting the classification. They will evaluate the performance of both and algorithms choose the algorithm that performs best. The model selected will be exposed as a web service that is integrated with the sample web app.
 
+This exercise has 8 tasks:
+
+-[Task 1: Navigate to Machine Learning Studio](#Task-1-Navigate-to-Machine-Learning-Studio)
+-Task 2: Upload the Sample Datasets
+-Task 3: Start a New Experiment
+-Task 4: Prepare the Weather Data
+-Task 5: Join the Flight and Weather Datasets
+-Task 6: Train the Model
+-Task 7: Operationalize the Experiment
+-Task 8: Note Web Service Integration Information
+
 ## Task 1: Navigate to Machine Learning Studio
 
 1. In your browser, go to [https://studio.azureml.net](https://studio.azureml.net) and log in using the same account you used in the Azure portal to deploy the prerequisites for this workshop.
