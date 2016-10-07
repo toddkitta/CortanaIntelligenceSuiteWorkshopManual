@@ -4,6 +4,14 @@ Duration: 20 mins
 
 Synopsis: In this exercise, attendees will extend the Data Factory service to operationalize the scoring of data using the previously created ML model.
 
+This exercise has 5 tasks:
+
+* [Task 1: Create Azure ML Linked Service](#task-1-create-azure-ml-linked-service)
+* [Task 2: Create Azure ML Input Dataset](#task-2-create-azure-ml-input-dataset)
+* [Task 3: Create Azure ML Scored Dataset](#task-3-create-azure-ml-scored-dataset)
+* [Task 4: Create Azure ML Predictive Pipeline](#task-4-create-azure-ml-predictive-pipeline)
+* [Task 5: Monitor Your Pipeline Activities](#task-5-monitor-your-pipeline-activities)
+
 ## Task 1: Create Azure ML Linked Service
 
 1. Go back to the **Azure Data Factory** service blade.
