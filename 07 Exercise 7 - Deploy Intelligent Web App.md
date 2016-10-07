@@ -1,10 +1,10 @@
-## Exercise 7: Deploy Intelligent Web App
+# Exercise 7: Deploy Intelligent Web App
 
 Duration: 20 mins
 
 Synopsis: In this exercise, attendees will deploy an intelligent web application to Azure from GitHub. This application leverages the operationalized machine learning model that was deployed in Exercise 1 to bring action-oriented insight to an already existing business process.
 
-### Task 1: Deploy Web App from GitHub
+## Task 1: Deploy Web App from GitHub
 
 1. Navigate to [http://aka.ms/cortanawebdeploy](http://aka.ms/cortanawebdeploy) in your browser of choice, but where you are already authenticated to the Azure Portal.
 2. Read through the README information on the GitHub page.
