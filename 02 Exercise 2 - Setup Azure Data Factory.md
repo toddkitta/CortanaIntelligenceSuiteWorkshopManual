@@ -101,7 +101,7 @@ Synopsis: In this exercise, attendees will create a baseline environment for Azu
 
 1. Confirmed that gateway is connected by going to the system tray of the bottom right corner and double click on the follow icon.
 
-![Screenshot](images/ex02_create_new_azure_data_factory_service_8.png)
+    ![Screenshot](images/ex02_create_new_azure_data_factory_service_8.png)
 
 1. You should see following screen:
 
