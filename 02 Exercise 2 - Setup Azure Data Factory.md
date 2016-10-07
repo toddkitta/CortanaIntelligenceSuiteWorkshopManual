@@ -1,10 +1,10 @@
-## Exercise 2: Setup Azure Data Factory
+# Exercise 2: Setup Azure Data Factory
 
 Duration: 20 mins
 
 Synopsis: In this exercise, attendees will create a baseline environment for Azure Data Factory development for further operationalization of data movement and processing. They will create a Data Factory service and then install the Data Management Gateway which is the agent that facilitates data movement from on-premises to Microsoft Azure.
 
-### Task 1: Connect to the Lab VM
+## Task 1: Connect to the Lab VM
 
 1. From the left side of the Azure portal, click on **Browse &gt;**.
 2. In the **filter** box, type in **virtual**.
@@ -24,7 +24,7 @@ Synopsis: In this exercise, attendees will create a baseline environment for Azu
 
 1. Log in with the credentials you specified for the Lab VM during the deployment of the workshop prerequisites.
 
-### Task 2: Install and Configure Data Management Gateway on the Lab VM
+## Task 2: Install and Configure Data Management Gateway on the Lab VM
 
 1. Once you have logged in to the Lab VM, open a web browser. A shortcut for Chrome is on the Desktop and Internet Explorer can be accessed from the Start Screen.
 2. Download the AdventureWorks sample CSV file. You can download it from [http://aka.ms/flightsandweather](http://aka.ms/flightsandweather) and save it to a new folder called **C:\Data**.
@@ -47,12 +47,12 @@ Synopsis: In this exercise, attendees will create a baseline environment for Azu
 
     ![Screenshot](images/ex02_install_and_configure_data_management_gateway_on_the_lab_vm_2.png)
 
-### Task 3: Log in to the Azure Portal
+## Task 3: Log in to the Azure Portal
 
 1. Launch a new browser session and navigate to [https://portal.azure.com](https://portal.azure.com). Once prompted, log in with your Microsoft Azure credentials. If prompted, choose whether your account is an organization account or a Microsoft Account.  This will be based on which account was used to provision your Azure subscription that are using for these labs.
   - **Note** : You may need to launch an InPrivate/Incognito session in your browser if you have multiple Microsoft Accounts.
 
-### Task 4: Create new Azure Data Factory Service
+## Task 4: Create new Azure Data Factory Service
 
 1. From left top corner of the Azure Portal, click on **+New**.
 
