@@ -423,8 +423,6 @@ The typical pattern is split the historical data so a portion is shown to the mo
 1. From the Web Service dashboard, copy the API key, open a copy of Notepad.exe on your local workstation, and paste the value in the editor.
 2. On the Web Service dashboard, click the **REQUEST/RESPONSE** link.
 3. Scroll down until you see the first Request URL. From this URL, you can get the Workspace ID and the Service ID.
-
-    https://ussouthcentral.services.azureml.net/workspaces/**f8a24adcde7c45e1bb1c9ef85fe36f62**/services/ **656c53c99cc848e1a476f5068ba39fb6**/execute?api-version=2.0&amp;details=true
-
+    https://ussouthcentral.services.azureml.net/workspaces/f8a24adcde7c45e1bb1c9ef85fe36f62/services/656c53c99cc848e1a476f5068ba39fb6/execute?api-version=2.0&amp;details=true
 1. The first GUID after workspaces is your Workspace ID. The second GUID after services is your Service ID.
 2. Copy each of these values into Notepad as well. Make sure you note which GUID is which because you will need these in a later step.
