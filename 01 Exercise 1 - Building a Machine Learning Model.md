@@ -20,17 +20,17 @@ Synopsis: In this exercise, attendees will implement a classification experiment
   - FlightWeatherWithAirportCodes.csv
   - AirportCodeLocationClean.csv
 
-1. Click **+ NEW** at the bottom, point to **Dataset** , and select **From Local File**.
+4. Click **+ NEW** at the bottom, point to **Dataset** , and select **From Local File**.
 
 ![Screenshot](images/upload_the_sample_datasets_0.png)
 
-1. In the dialog that appears, click **Choose File** and browse to the FlightDelaysWithAirportCodes file and click **OK**.
-2. Change the name of the dataset to **FlightDelaysWithAirportCodes**.
-3. Click on the check mark on the bottom right corner of the screen.
+5. In the dialog that appears, click **Choose File** and browse to the FlightDelaysWithAirportCodes file and click **OK**.
+6. Change the name of the dataset to **FlightDelaysWithAirportCodes**.
+7. Click on the check mark on the bottom right corner of the screen.
 
 ![Screenshot](images/upload_the_sample_datasets_1.png)
 
-1. Repeat the previous step for the FlightWeatherWithAirportCodes and AirportCodeLocationsClean setting the name for the dataset in a similar fashion.
+8. Repeat the previous step for the FlightWeatherWithAirportCodes and AirportCodeLocationsClean setting the name for the dataset in a similar fashion.
 
 ### Task 3: Start a New Experiment
 
@@ -39,120 +39,120 @@ Synopsis: In this exercise, attendees will implement a classification experiment
 
 ![Screenshot](images/start_a_new_experiment_0.png)
 
-1. Give your new experiment a name, such as **AdventureWorks Travel** by editing the label near the top of the design surface.
+3. Give your new experiment a name, such as **AdventureWorks Travel** by editing the label near the top of the design surface.
 
 ![Screenshot](images/start_a_new_experiment_1.png)
 
-1. In the toolbar on the left, in the Search experiment items box, type the name of the dataset you created with flight delay data (FlightDelaysWithAirportCodes). You should see a component for it listed under Saved Datasets, My Datasets.
+4. In the toolbar on the left, in the Search experiment items box, type the name of the dataset you created with flight delay data (FlightDelaysWithAirportCodes). You should see a component for it listed under Saved Datasets, My Datasets.
 
 ![Screenshot](images/start_a_new_experiment_2.png)
 
-1. Click and drag on the **FlightDelaysWithAirportCodes** to add it to the design surface.
+5. Click and drag on the **FlightDelaysWithAirportCodes** to add it to the design surface.
 
 ![Screenshot](images/start_a_new_experiment_3.png)
 
-1. Next, you will explore each of the datasets to understand what kind of cleanup (aka data munging) will be necessary.
-2. Hover over the output port of the **FlightDelaysWithAirportCodes** dataset.
+6. Next, you will explore each of the datasets to understand what kind of cleanup (aka data munging) will be necessary.
+7. Hover over the output port of the **FlightDelaysWithAirportCodes** dataset.
 
 ![Screenshot](images/start_a_new_experiment_4.png)
 
-1. Right-click on the port and select **Visualize**.
+8. Right-click on the port and select **Visualize**.
 
 ![Screenshot](images/start_a_new_experiment_5.png)
 
-1. A new dialog will appear showing a maximum of 100 rows by 100 columns sample of the dataset. You can see at the top that the dataset has a total of 2,719,418 rows (also referred to as examples in Machine Learning literature) and has 20 columns (also referred to as features).
+9. A new dialog will appear showing a maximum of 100 rows by 100 columns sample of the dataset. You can see at the top that the dataset has a total of 2,719,418 rows (also referred to as examples in Machine Learning literature) and has 20 columns (also referred to as features).
 
 ![Screenshot](images/start_a_new_experiment_6.png)
 
-1. Because all 20 columns are displayed, you can scroll the grid horizontally. Scroll until you see the DepDelay15 column and click it to view statistics about the column. The DepDelay15 column displays a 1 when the flight was delayed at least 15 minutes and 0 if there was no such delay. In the model you will construct, you will try to predict the value of this column for future data.
+10. Because all 20 columns are displayed, you can scroll the grid horizontally. Scroll until you see the DepDelay15 column and click it to view statistics about the column. The DepDelay15 column displays a 1 when the flight was delayed at least 15 minutes and 0 if there was no such delay. In the model you will construct, you will try to predict the value of this column for future data.
 
 ![Screenshot](images/start_a_new_experiment_7.png)
 
-1. Notice in the Statistics panel that a value of 27444 appears for Missing Values. This means that 27,444 rows do not have a value in this column. Since this value is very important to our model, we will eliminate any rows that do not have a value for this column.
-2. To eliminate these problem rows, close the dialog and go back to the design surface. From the toolbar, search for **Clean Missing Data**.
+11. Notice in the Statistics panel that a value of 27444 appears for Missing Values. This means that 27,444 rows do not have a value in this column. Since this value is very important to our model, we will eliminate any rows that do not have a value for this column.
+12. To eliminate these problem rows, close the dialog and go back to the design surface. From the toolbar, search for **Clean Missing Data**.
 
 ![Screenshot](images/start_a_new_experiment_8.png)
 
-1. Drag this module on to the design surface beneath your **FlightDelaysWithAirportCodes** dataset. Click the small circle at the bottom of the **FlightDelaysWithAirportCodes** dataset, drag and release when your mouse is over the circle found in the top center of the Clean Missing Data module. These circles are referred to as ports, and by taking this action you have connected the output port of the dataset with the input port of the Clean Missing Data module, which means the data from the dataset will flow along this path.
+13. Drag this module on to the design surface beneath your **FlightDelaysWithAirportCodes** dataset. Click the small circle at the bottom of the **FlightDelaysWithAirportCodes** dataset, drag and release when your mouse is over the circle found in the top center of the Clean Missing Data module. These circles are referred to as ports, and by taking this action you have connected the output port of the dataset with the input port of the Clean Missing Data module, which means the data from the dataset will flow along this path.
 
 ![Screenshot](images/start_a_new_experiment_9.png)
 
-1. Click **Save** on the command bar at the bottom to save your in-progress experiment.
+14. Click **Save** on the command bar at the bottom to save your in-progress experiment.
 
 ![Screenshot](images/start_a_new_experiment_10.png)
 
-1. Click **Run** in the command bar at the bottom to run the experiment.
+15. Click **Run** in the command bar at the bottom to run the experiment.
 
 ![Screenshot](images/start_a_new_experiment_11.png)
 
-1. When the experiment is finished running, you will see a finished message in the top right corner of the design surface, and green check marks over all modules that ran.
+16. When the experiment is finished running, you will see a finished message in the top right corner of the design surface, and green check marks over all modules that ran.
 
 ![Screenshot](images/start_a_new_experiment_12.png)
 
-1. You should run your experiment whenever you need to update the metadata describing what data is flowing through the modules, so that newly added modules can be aware of the shape of your data (most module have dialogs that can suggest columns, but before they can make suggestions you need to have run your experiment).
-2. Click the **Clean Missing Data** module to select it. The property panel on the right will display the settings appropriate to the selected module.
-3. In this case, we want to remove rows that have no value for the DepDelay15 column. Begin by clicking **Launch Column Selector**.
+17. You should run your experiment whenever you need to update the metadata describing what data is flowing through the modules, so that newly added modules can be aware of the shape of your data (most module have dialogs that can suggest columns, but before they can make suggestions you need to have run your experiment).
+18. Click the **Clean Missing Data** module to select it. The property panel on the right will display the settings appropriate to the selected module.
+19. In this case, we want to remove rows that have no value for the DepDelay15 column. Begin by clicking **Launch Column Selector**.
 
 ![Screenshot](images/start_a_new_experiment_13.png)
 
-1. Ensuring **With Rules** is selected on the left side of the dialog, under the **Begin With** section, select **No Columns**. In the row of controls that appears, change the second drop down to **Column Names**. Then in the text box that appears begin to type **DepDel15** and select that item from type-ahead list.
+20. Ensuring **With Rules** is selected on the left side of the dialog, under the **Begin With** section, select **No Columns**. In the row of controls that appears, change the second drop down to **Column Names**. Then in the text box that appears begin to type **DepDel15** and select that item from type-ahead list.
 
 ![Screenshot](images/start_a_new_experiment_14.png)
 
-1. Click the checkmark to apply the settings. You have now indicated to the Clean Missing Data module that DepDel15 is the only column it should act on.
+21. Click the checkmark to apply the settings. You have now indicated to the Clean Missing Data module that DepDel15 is the only column it should act on.
 
 ![Screenshot](images/start_a_new_experiment_15.png)
 
-1. In the **Properties** panel for **Clean Missing Data** , click the **Cleaning mode** drop-down and select **Remove entire row**. Now your Clean Missing Data module is fully configured to remove any rows that are missing values for DepDel15.
+22. In the **Properties** panel for **Clean Missing Data** , click the **Cleaning mode** drop-down and select **Remove entire row**. Now your Clean Missing Data module is fully configured to remove any rows that are missing values for DepDel15.
 
 ![Screenshot](images/start_a_new_experiment_16.png)
 
-1. To verify the result, run your experiment again. After it is finished, click the output port (1) of the Clean Missing Data module and select **Visualize**.
-2. In the dialog that appears, scroll over to **DepDel15** and click the column. In the statistics you should see that Missing Values reads 0.
+23. To verify the result, run your experiment again. After it is finished, click the output port (1) of the Clean Missing Data module and select **Visualize**.
+24. In the dialog that appears, scroll over to **DepDel15** and click the column. In the statistics you should see that Missing Values reads 0.
 
 ![Screenshot](images/start_a_new_experiment_17.png)
 
-1. Our model will approximate departure times to the nearest hour, but departure time is captured as an integer. For example, 8:37 am is captured as 837. Therefore, we will need to process the CRSDepTime column and round it down to the nearest hour.
-2. To perform this rounding will require two steps, first you will need to divide the value by 100 (so that 837 becomes 8.37). Second, you will round this value down to the nearest hour (so that 8.37 becomes 8).
-3. Begin by adding an **Apply Math Operation** module beneath the Clean Missing Data module and connect the output port (1) of the Clean Missing Data module to the input port of the Apply Math Operation.
+25. Our model will approximate departure times to the nearest hour, but departure time is captured as an integer. For example, 8:37 am is captured as 837. Therefore, we will need to process the CRSDepTime column and round it down to the nearest hour.
+26. To perform this rounding will require two steps, first you will need to divide the value by 100 (so that 837 becomes 8.37). Second, you will round this value down to the nearest hour (so that 8.37 becomes 8).
+27. Begin by adding an **Apply Math Operation** module beneath the Clean Missing Data module and connect the output port (1) of the Clean Missing Data module to the input port of the Apply Math Operation.
 
 ![Screenshot](images/start_a_new_experiment_18.png)
 
-1. In the properties of the Apply Math Operation, set the Category to **Operations** , Basic operation to **Divide** , Operation argument type to **Constant** , Constant operation argument to **100** , Selected columns to **CRSDepTime** (see screenshot below), and Output mode to **Append**.
+28. In the properties of the Apply Math Operation, set the Category to **Operations** , Basic operation to **Divide** , Operation argument type to **Constant** , Constant operation argument to **100** , Selected columns to **CRSDepTime** (see screenshot below), and Output mode to **Append**.
 
 ![Screenshot](images/start_a_new_experiment_19.png)
 
 ![Screenshot](images/start_a_new_experiment_20.png)
 
-1. Run the experiment to update the metadata.
-2. This module will add a new column to the dataset called Divide(CRSDeptTime\_$100), but we want to rename it to CRSDepHour. To do so, add an **Edit Metadata** module and connect its input port to the output port of Apply Math Operation.
+29. Run the experiment to update the metadata.
+30. This module will add a new column to the dataset called Divide(CRSDeptTime\_$100), but we want to rename it to CRSDepHour. To do so, add an **Edit Metadata** module and connect its input port to the output port of Apply Math Operation.
 
 ![Screenshot](images/start_a_new_experiment_21.png)
 
-1. For the properties of the **Edit Metadata** , set the Selected Columns to **Divide(CRSDeptTime\_$100)** and New column names to **CRSDepHour**.
+31. For the properties of the **Edit Metadata** , set the Selected Columns to **Divide(CRSDeptTime\_$100)** and New column names to **CRSDepHour**.
 
 ![Screenshot](images/start_a_new_experiment_22.png)
 
 ![Screenshot](images/start_a_new_experiment_23.png)
 
-1. Run the experiment to update the metadata.
-2. Add another **Apply Math Operation** module to round the time down to the nearest hour. Set the Category to **Rounding** , Selected columns to **CRSDepHour** (see screenshot for how to select), and Output mode to **Inplace**.
+32. Run the experiment to update the metadata.
+33. Add another **Apply Math Operation** module to round the time down to the nearest hour. Set the Category to **Rounding** , Selected columns to **CRSDepHour** (see screenshot for how to select), and Output mode to **Inplace**.
 
 ![Screenshot](images/start_a_new_experiment_24.png)
 
 ![Screenshot](images/start_a_new_experiment_25.png)
 
-1. Run the experiment to update the metadata.
-2. We do not need all of the columns present in the FlightDelaysWithAirportCodes dataset. To pare down the columns we can use multiple options, but in this case we chose to use an R Script module that selects out only the columns of interest using R code.
-3. Add an **Execute R Script** module beneath the last Apply Math Operation, and connect the output of the Apply Math Operation to the first input port (leftmost) of the Execute R Script.
+34. Run the experiment to update the metadata.
+35. We do not need all of the columns present in the FlightDelaysWithAirportCodes dataset. To pare down the columns we can use multiple options, but in this case we chose to use an R Script module that selects out only the columns of interest using R code.
+36. Add an **Execute R Script** module beneath the last Apply Math Operation, and connect the output of the Apply Math Operation to the first input port (leftmost) of the Execute R Script.
 
 ![Screenshot](images/start_a_new_experiment_26.png)
 
-1. In the **Properties** panel for Execute R Script, click the **Double Windows** icon to maximize the script editor.
+37. In the **Properties** panel for Execute R Script, click the **Double Windows** icon to maximize the script editor.
 
 ![Screenshot](images/start_a_new_experiment_27.png)
 
-1. Replace the default script with the following and click the checkmark to save it (press CTRL+A to select all of the text then CTRL+V to paste and then immediately click the checkmark. Don&#39;t worry if the formatting is off before hitting the checkmark.
+38. Replace the default script with the following and click the checkmark to save it (press CTRL+A to select all of the text then CTRL+V to paste and then immediately click the checkmark. Don&#39;t worry if the formatting is off before hitting the checkmark.
 
 ds.flights &lt;- maml.mapInputPort(1)
 
@@ -162,13 +162,13 @@ ds.flights = ds.flights[, c(&quot;OriginAirportCode&quot;,&quot;OriginLatitude&q
 
 maml.mapOutputPort(&quot;ds.flights&quot;);
 
-1. Run the experiment to update the metadata (this may take a minute or two to complete).
-2. Right-click on the first output port of your Execute R Script module and select **Visualize**.
-3. Verify that the dataset only contains the 12 columns referenced in the R script.
+39. Run the experiment to update the metadata (this may take a minute or two to complete).
+40. Right-click on the first output port of your Execute R Script module and select **Visualize**.
+41. Verify that the dataset only contains the 12 columns referenced in the R script.
 
 ![Screenshot](images/start_a_new_experiment_28.png)
 
-1. At this point the Flight Delay Data is prepared, and we turn to preparing the historical weather data.
+42. At this point the Flight Delay Data is prepared, and we turn to preparing the historical weather data.
 
 ### Task 4: Prepare the Weather Data
 
@@ -176,41 +176,41 @@ maml.mapOutputPort(&quot;ds.flights&quot;);
 
 ![Screenshot](images/prepare_the_weather_data_0.png)
 
-1. Right-click the output port of the FlightWeatherWithAirportCodes dataset and select **Visualize**.
+2. Right-click the output port of the FlightWeatherWithAirportCodes dataset and select **Visualize**.
 
 ![Screenshot](images/prepare_the_weather_data_1.png)
 
-1. Observe that this data set has 406,516 rows and 29 columns. For this model, we are going to focus on predicting delays using WindSpeed (in MPH), SeaLevelPressure (in inches of Hg), and HourlyPrecip (in inches). We will focus on preparing the data for those features.
-2. In the dialog, click the **WindSpeed** column and review the statistics. Observe that the Feature Type was inferred as String and that there are 32 Missing Values. Below that, examine the histogram to see that, even though the type was inferred as string, the values are all actually numbers (e.g. the x-axis values are 0, 6, 5, 7, 3, 8, 9, 10, 11, 13). We will need to ensure that we remove any missing values and convert WindSpeed to its proper type as a numeric feature.
+3. Observe that this data set has 406,516 rows and 29 columns. For this model, we are going to focus on predicting delays using WindSpeed (in MPH), SeaLevelPressure (in inches of Hg), and HourlyPrecip (in inches). We will focus on preparing the data for those features.
+4. In the dialog, click the **WindSpeed** column and review the statistics. Observe that the Feature Type was inferred as String and that there are 32 Missing Values. Below that, examine the histogram to see that, even though the type was inferred as string, the values are all actually numbers (e.g. the x-axis values are 0, 6, 5, 7, 3, 8, 9, 10, 11, 13). We will need to ensure that we remove any missing values and convert WindSpeed to its proper type as a numeric feature.
 
 ![Screenshot](images/prepare_the_weather_data_2.png)
 
-1. Next, click the **SeaLevelPressure** column. Observe that the Feature Type was inferred as String and there are 0 Missing Values. Scroll down to the histogram, and observe that many of the features of a numeric value (e.g., 29.96, 30.01, etc.), but there are many features with the string value of M for Missing. We will need to replace this value of M&quot;with a suitable numeric value so that we can convert this feature to be a numeric feature.
+5. Next, click the **SeaLevelPressure** column. Observe that the Feature Type was inferred as String and there are 0 Missing Values. Scroll down to the histogram, and observe that many of the features of a numeric value (e.g., 29.96, 30.01, etc.), but there are many features with the string value of M for Missing. We will need to replace this value of M&quot;with a suitable numeric value so that we can convert this feature to be a numeric feature.
 
 ![Screenshot](images/prepare_the_weather_data_3.png)
 
-1. Finally, examine the **HourlyPrecip** feature. Observe that it too was inferred to have a Feature Type of String and is missing values for 374,503 rows. Looking at the histogram, observe that besides the numeric values, there is a value T for Trace amount of rain). We will need to replace the T with a suitable numeric value and covert this feature to a numeric feature.
+6. Finally, examine the **HourlyPrecip** feature. Observe that it too was inferred to have a Feature Type of String and is missing values for 374,503 rows. Looking at the histogram, observe that besides the numeric values, there is a value T for Trace amount of rain). We will need to replace the T with a suitable numeric value and covert this feature to a numeric feature.
 
 ![Screenshot](images/prepare_the_weather_data_4.png)
 
-1. Let us begin by cleaning up the missing values for both WindSpeed and HourlyPrecip.
-2. Below the FlightWeatherWithAirportCode dataset, drop a **Clean Missing Data** module and connect the output of the dataset to the input of module.
+7. Let us begin by cleaning up the missing values for both WindSpeed and HourlyPrecip.
+8. Below the FlightWeatherWithAirportCode dataset, drop a **Clean Missing Data** module and connect the output of the dataset to the input of module.
 
 ![Screenshot](images/prepare_the_weather_data_5.png)
 
-1. Run the experiment to update the metadata available to the Clean Missing Data module.
-2. In the **Properties** panel for Clean Missing Data, set the Selected columns to **HourlyPrecip** and **WindSpeed** (see screenshot for help selecting if needed), set the Cleaning mode to **Custom substitution value** and set the Replacement value to **0.0**.
+9. Run the experiment to update the metadata available to the Clean Missing Data module.
+10. In the **Properties** panel for Clean Missing Data, set the Selected columns to **HourlyPrecip** and **WindSpeed** (see screenshot for help selecting if needed), set the Cleaning mode to **Custom substitution value** and set the Replacement value to **0.0**.
 
 ![Screenshot](images/prepare_the_weather_data_6.png)
 
 ![Screenshot](images/prepare_the_weather_data_7.png)
 
-1. Next, add an **Execute R Script** module below the Clean Missing Data module and connect the first output port of the former to the first input port of the latter.
+11. Next, add an **Execute R Script** module below the Clean Missing Data module and connect the first output port of the former to the first input port of the latter.
 
 ![Screenshot](images/prepare_the_weather_data_8.png)
 
-1. In the **Properties** panel for the Execute R Script, click the &quot;double windows&quot; icon to open the script editor.
-2. Paste in the following script and click the checkmark (press CTRL+A to select all of the text then CTRL+V to paste and then click the checkmark. Don&#39;t worry if the formatting is off). This script replaces the HourlyPrecip values having T with 0.05, WindSpeed values of M with 0.0, and the SeaLevelPressure values of M with the global average pressure of 29.92. It also narrows the dataset to just the few feature columns we want to use with our model.
+12. In the **Properties** panel for the Execute R Script, click the &quot;double windows&quot; icon to open the script editor.
+13. Paste in the following script and click the checkmark (press CTRL+A to select all of the text then CTRL+V to paste and then click the checkmark. Don&#39;t worry if the formatting is off). This script replaces the HourlyPrecip values having T with 0.05, WindSpeed values of M with 0.0, and the SeaLevelPressure values of M with the global average pressure of 29.92. It also narrows the dataset to just the few feature columns we want to use with our model.
 
 ds.weather &lt;- maml.mapInputPort(1)
 
@@ -254,12 +254,12 @@ ds.weather = ds.weather[, c(&quot;AirportCode&quot;, &quot;Month&quot;, &quot;Da
 
 maml.mapOutputPort(&quot;ds.weather&quot;);
 
-1. Run the experiment. Currently it should appear as follows:
+14. Run the experiment. Currently it should appear as follows:
 
 ![Screenshot](images/prepare_the_weather_data_9.png)
 
-1. Click the first output port of the Execute R Script module and select **Visualize**.
-2. In the statistics, verify that WindSpeed, SeaLevelPressure, and HourlyPrecip are now all Numeric Feature types and that they have no missing values.
+15. Click the first output port of the Execute R Script module and select **Visualize**.
+16. In the statistics, verify that WindSpeed, SeaLevelPressure, and HourlyPrecip are now all Numeric Feature types and that they have no missing values.
 
 ### Task 5: Join the Flight and Weather Datasets
 
