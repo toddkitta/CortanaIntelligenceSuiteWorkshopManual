@@ -1,10 +1,10 @@
-## Exercise 5: Summarize Data Using HDInsight Spark
+# Exercise 5: Summarize Data Using HDInsight Spark
 
 Duration: 60 mins
 
 Synopsis: In this exercise, attendees will prepare a summary of flight delay data in HDFS using Spark SQL. Note: This exercise has the attendee copying and pasting some Spark code. The code is available in an easy to access text file at [http://aka.ms/sparkcode](http://aka.ms/sparkcode). Copying from the text file (rather than from this manual) can cut down on formatting problems.
 
-### Task 1: Summarize Delays by Airport
+## Task 1: Summarize Delays by Airport
 
 1. Navigate to the blade for your Spark Cluster in the Azure Portal.
 
