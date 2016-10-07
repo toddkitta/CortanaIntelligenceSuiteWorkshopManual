@@ -6,10 +6,10 @@ Synopsis: In this exercise, attendees will create a baseline environment for Azu
 
 This exercise has 4 tasks:
 
-* [Task 1: Connect to the Lab VM](task-1-connect-to-the-lab-vm)
-* [Task 2: Install and Configure Data Management Gateway on the Lab VM](task-2-install-and-configure-data-management-gateway-on-the-lab-vm)
-* [Task 3: Log in to the Azure Portal](task-3-log-in-to-the-azure-portal)
-* [Task 4: Create new Azure Data Factory Service](task-4-create-new-azure-data-factory-service)
+* [Task 1: Connect to the Lab VM](#task-1-connect-to-the-lab-vm)
+* [Task 2: Install and Configure Data Management Gateway on the Lab VM](#task-2-install-and-configure-data-management-gateway-on-the-lab-vm)
+* [Task 3: Log in to the Azure Portal](#task-3-log-in-to-the-azure-portal)
+* [Task 4: Create new Azure Data Factory Service](#task-4-create-new-azure-data-factory-service)
 
 ## Task 1: Connect to the Lab VM
 
