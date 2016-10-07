@@ -4,6 +4,13 @@ Duration: 20 mins
 
 Synopsis: In this exercise, attendees will construct a report in Power BI Desktop Client that uses the map visualization to illustrate the predicted delays, using the data originally scored using Machine Learning, but summarized in a table using Spark on HDInsight.
 
+This exercise has 4 tasks:
+
+* [Task 1: Connect to the Lab VM](#task-1-connect-to-the-lab-vm)
+* [Task 2: Install Spark ODBC Driver](#task-2-install-spark-odbc-driver)
+* [Task 3: Connect to the HDInsight Spark Using Power BI Desktop](#task-3-connect-to-the-hdinsight-spark-using-power-bi-desktop)
+* [Task 4: Create Power BI Report](#task-4-create-power-bi-report)
+
 ## Task 1: Connect to the Lab VM
 
 1. You may already be logged in to the Lab VM from a previous exercise. If so, then go the Remote Desktop session of the Lab VM and skip to Task 2. If not, then to follow steps 2-9 below to log in to the Lab VM again.
