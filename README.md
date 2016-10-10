@@ -15,12 +15,12 @@ In this lab, attendees will build an end-to-end solution to predict flight delay
 
 # Exercises
 
-- [01 Exercise 1 - Building a Machine Learning Model.md](01 Exercise 1 - Building a Machine Learning Model.md)
-- [02 Exercise 2 - Setup Azure Data Factory.md](02 Exercise 2 - Setup Azure Data Factory.md)
-- [03 Exercise 3 - Develop Data Factory Pipeline for Data Movement.md](03 Exercise 3 - Develop Data Factory Pipeline for Data Movement.md)
-- [04 Exercise 4 - Operationalize ML Scoring with Azure ML and Data Factory.md](04 Exercise 4 - Operationalize ML Scoring with Azure ML and Data Factory.md)
-- [05 Exercise 5 - Summarize Data Using HDInsight Spark.md](05 Exercise 5 - Summarize Data Using HDInsight Spark.md)
-- [06 Exercise 6 - Visualizing in Power BI Desktop.md](06 Exercise 6 - Visualizing in Power BI Desktop.md)
-- [07 Exercise 7 - Deploy Intelligent Web App.md](07 Exercise 7 - Deploy Intelligent Web App.md)
-- [08 Exercise 8 - Cleanup of Azure Resources.md](08 Exercise 8 - Cleanup of Azure Resources.md)
-- [09 Appendix A - Alternative to Azure ML Exercise.md](09 Appendix A - Alternative to Azure ML Exercise.md)
+- [Exercise 1 - Building a Machine Learning Model](01 Exercise 1 - Building a Machine Learning Model.md)
+- [Exercise 2 - Setup Azure Data Factory](02 Exercise 2 - Setup Azure Data Factory.md)
+- [Exercise 3 - Develop Data Factory Pipeline for Data Movement](03 Exercise 3 - Develop Data Factory Pipeline for Data Movement.md)
+- [Exercise 4 - Operationalize ML Scoring with Azure ML and Data Factory](04 Exercise 4 - Operationalize ML Scoring with Azure ML and Data Factory.md)
+- [Exercise 5 - Summarize Data Using HDInsight Spark](05 Exercise 5 - Summarize Data Using HDInsight Spark.md)
+- [Exercise 6 - Visualizing in Power BI Desktop](06 Exercise 6 - Visualizing in Power BI Desktop.md)
+- [Exercise 7 - Deploy Intelligent Web App](07 Exercise 7 - Deploy Intelligent Web App.md)
+- [Exercise 8 - Cleanup of Azure Resources](08 Exercise 8 - Cleanup of Azure Resources.md)
+- [Appendix A - Alternative to Azure ML Exercise](09 Appendix A - Alternative to Azure ML Exercise.md)
