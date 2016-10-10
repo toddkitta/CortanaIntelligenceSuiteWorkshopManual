@@ -26,11 +26,9 @@ This exercise has 8 tasks:
 2. Download the three CSV sample datasets from here: http://aka.ms/awtdata and save AdventureWorksTravelDatasets.zip to your Desktop.
   - **Note:** You will need to unblock the zip file before extracting its files. Do this by right clicking on it, selecting **Properties**, and then unblocking the file in the resulting dialog.
 3. Extract the ZIP and verify you have the following files:
-
   - FlightDelaysWithAirportCodes.csv
   - FlightWeatherWithAirportCodes.csv
   - AirportCodeLocationClean.csv
-
 4. Click **+ NEW** at the bottom, point to **Dataset** , and select **From Local File**.
 
     ![Screenshot](images/upload_the_sample_datasets_0.png)
