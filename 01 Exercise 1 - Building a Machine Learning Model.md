@@ -73,7 +73,7 @@ This exercise has 8 tasks:
 
     ![Screenshot](images/start_a_new_experiment_6.png)
 
-10. Because all 20 columns are displayed, you can scroll the grid horizontally. Scroll until you see the **DepDelay15** column and click it to view statistics about the column. The **DepDelay15** column displays a 1 when the flight was delayed at least 15 minutes and 0 if there was no such delay. In the model you will construct, you will try to predict the value of this column for future data.
+10. Because all 20 columns are displayed, you can scroll the grid horizontally. Scroll until you see the **DepDel15** column and click it to view statistics about the column. The **DepDel15** column displays a 1 when the flight was delayed at least 15 minutes and 0 if there was no such delay. In the model you will construct, you will try to predict the value of this column for future data.
 
     ![Screenshot](images/start_a_new_experiment_7.png)
 
