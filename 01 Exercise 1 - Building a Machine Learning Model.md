@@ -33,7 +33,7 @@ This exercise has 8 tasks:
 
     ![Screenshot](images/upload_the_sample_datasets_0.png)
 
-5. In the dialog that appears, click **Choose File** and browse to the FlightDelaysWithAirportCodes file and click **OK**.
+5. In the dialog that appears, click **Choose File** and browse to the **FlightDelaysWithAirportCodes.csv** file and click **OK**.
 6. Change the name of the dataset to **FlightDelaysWithAirportCodes**.
 7. Click on the check mark on the bottom right corner of the screen.
 
