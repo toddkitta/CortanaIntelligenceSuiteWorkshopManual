@@ -52,7 +52,7 @@ This exercise has 8 tasks:
 
     ![Screenshot](images/start_a_new_experiment_1.png)
 
-4. In the toolbar on the left, in the Search experiment items box, type the name of the dataset you created with flight delay data (FlightDelaysWithAirportCodes). You should see a component for it listed under Saved Datasets, My Datasets.
+4. In the toolbar on the left, in the Search experiment items box, type the name of the dataset you created with flight delay data (FlightDelaysWithAirportCodes). You should see a component for it listed under **Saved Datasets** -> **My Datasets**.
 
     ![Screenshot](images/start_a_new_experiment_2.png)
 
@@ -65,7 +65,7 @@ This exercise has 8 tasks:
 
     ![Screenshot](images/start_a_new_experiment_4.png)
 
-8. Right-click on the port and select **Visualize**.
+8. Right click on the port and select **Visualize**.
 
     ![Screenshot](images/start_a_new_experiment_5.png)
 
@@ -73,7 +73,7 @@ This exercise has 8 tasks:
 
     ![Screenshot](images/start_a_new_experiment_6.png)
 
-10. Because all 20 columns are displayed, you can scroll the grid horizontally. Scroll until you see the DepDelay15 column and click it to view statistics about the column. The DepDelay15 column displays a 1 when the flight was delayed at least 15 minutes and 0 if there was no such delay. In the model you will construct, you will try to predict the value of this column for future data.
+10. Because all 20 columns are displayed, you can scroll the grid horizontally. Scroll until you see the **DepDel15** column and click it to view statistics about the column. The **DepDel15** column displays a 1 when the flight was delayed at least 15 minutes and 0 if there was no such delay. In the model you will construct, you will try to predict the value of this column for future data.
 
     ![Screenshot](images/start_a_new_experiment_7.png)
 
@@ -82,7 +82,7 @@ This exercise has 8 tasks:
 
     ![Screenshot](images/start_a_new_experiment_8.png)
 
-13. Drag this module on to the design surface beneath your **FlightDelaysWithAirportCodes** dataset. Click the small circle at the bottom of the **FlightDelaysWithAirportCodes** dataset, drag and release when your mouse is over the circle found in the top center of the Clean Missing Data module. These circles are referred to as ports, and by taking this action you have connected the output port of the dataset with the input port of the Clean Missing Data module, which means the data from the dataset will flow along this path.
+13. Drag this module on to the design surface beneath your **FlightDelaysWithAirportCodes** dataset. Click the small circle at the bottom of the **FlightDelaysWithAirportCodes** dataset, drag and release when your mouse is over the circle found in the top center of the **Clean Missing Data** module. These circles are referred to as ports, and by taking this action you have connected the output port of the dataset with the input port of the **Clean Missing Data** module, which means the data from the dataset will flow along this path.
 
     ![Screenshot](images/start_a_new_experiment_9.png)
 
