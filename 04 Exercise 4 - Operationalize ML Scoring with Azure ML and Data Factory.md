@@ -26,8 +26,8 @@ This exercise has 5 tasks:
     ![Screenshot](images/create_azure_ml_linked_service_2.png)
 1. Select **Azure ML** from the list.
 2. In the new window, be sure change the JSON file to match the following:
-  1. In the new window, be sure change the JSON file to match the following or copy the below JSON text and paste into the browser window. You can also copy this from **Listing 1** in [http://aka.ms/adfcode](http://aka.ms/adfcode).
-  2. Be sure to follow steps 7 to 13 to obtain **mlEndPoint** URL and **apiKey** value.
+   * In the new window, be sure change the JSON file to match the following or copy the below JSON text and paste into the browser window.
+    * Be sure to follow steps 7 to 13 to obtain **mlEndPoint** URL and **apiKey** value.
 
     ```json
     {
@@ -62,7 +62,7 @@ This exercise has 5 tasks:
 
    ![Screenshot](images/create_azure_ml_input_dataset_1.png)
 1. Select **Azure Blob storage** from the list.
-2. In the new window, be sure change the JSON file to match the following or copy the below JSON text and paste into the browser window. You can also copy this from **Listing 2** in [http://aka.ms/adfcode](http://aka.ms/adfcode).
+2. In the new window, be sure change the JSON file to match the following or copy the below JSON text and paste into the browser window.
 
     ```json
     {
@@ -96,7 +96,7 @@ This exercise has 5 tasks:
 
     ![Screenshot](images/create_azure_ml_scored_dataset_1.png)
 1. Select **Azure Blob storage** from the list.
-2. In the new window, be sure change the JSON file to match the following or copy the below JSON text and paste into the browser window. You can also copy this from **Listing 3** in [http://aka.ms/adfcode](http://aka.ms/adfcode).
+2. In the new window, be sure change the JSON file to match the following or copy the below JSON text and paste into the browser window.
 
     ```json
     {
@@ -128,7 +128,7 @@ This exercise has 5 tasks:
 1. Click on the **New pipeline**.
 
     ![Screenshot](images/create_azure_ml_predictive_pipeline_1.png)
-1. In the new window, be sure change the JSON file to match the following or copy the below JSON text and paste into the browser window. You can also copy this from **Listing 4** in [http://aka.ms/adfcode](http://aka.ms/adfcode).
+1. In the new window, be sure change the JSON file to match the following or copy the below JSON text and paste into the browser window.
 
     ```json
     {
@@ -175,7 +175,7 @@ This exercise has 5 tasks:
         }
     }
     ```
-1. Make sure to change the **start** to today&#39;s date and **end** to today + 1 date.
+1. Make sure to change the **start** to today's date and **end** to today + 1 date.
 2. Click **Deploy**.
 
 ## Task 5: Monitor Your Pipeline Activities
