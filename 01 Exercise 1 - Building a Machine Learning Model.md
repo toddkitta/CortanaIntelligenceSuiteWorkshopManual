@@ -4,23 +4,40 @@ Duration: 90 mins
 
 Synopsis: In this exercise, attendees will implement a classification experiment. They will load the training data from their local machine into a dataset. Then they will explore the data to identify the primary components they should use for prediction, and use two different algorithms for predicting the classification. They will evaluate the performance of both and algorithms choose the algorithm that performs best. The model selected will be exposed as a web service that is integrated with the sample web app.
 
-This exercise has 8 tasks:
+This exercise has 9 tasks:
 
-* [Task 1: Navigate to Machine Learning Studio](#task-1-navigate-to-machine-learning-studio)
-* [Task 2: Upload the Sample Datasets](#task-2-upload-the-sample-datasets)
-* [Task 3: Start a New Experiment](#task-3-start-a-new-experiment)
-* [Task 4: Prepare the Weather Data](#task-4-prepare-the-weather-data)
-* [Task 5: Join the Flight and Weather Datasets](#task-5-join-the-flight-and-weather-datasets)
-* [Task 6: Train the Model](#task-6-train-the-model)
-* [Task 7: Operationalize the Experiment](#task-7-operationalize-the-experiment)
-* [Task 8: Note Web Service Integration Information](#task-8-note-web-service-integration-information)
+* [Task 1: Connect to the Lab VM](#task-1-connect-to-the-lab-vm)
+* [Task 2: Navigate to Machine Learning Studio](#task-2-navigate-to-machine-learning-studio)
+* [Task 3: Upload the Sample Datasets](#task-3-upload-the-sample-datasets)
+* [Task 4: Start a New Experiment](#task-4-start-a-new-experiment)
+* [Task 5: Prepare the Weather Data](#task-5-prepare-the-weather-data)
+* [Task 6: Join the Flight and Weather Datasets](#task-6-join-the-flight-and-weather-datasets)
+* [Task 7: Train the Model](#task-7-train-the-model)
+* [Task 8: Operationalize the Experiment](#task-8-operationalize-the-experiment)
+* [Task 9: Note Web Service Integration Information](#task-9-note-web-service-integration-information)
 
-## Task 1: Navigate to Machine Learning Studio
+## Task 1: Connect to the Lab VM
 
-1. In your browser, go to [https://studio.azureml.net](https://studio.azureml.net) and log in using the same account you used in the Azure portal to deploy the prerequisites for this workshop.
+1. From the left side of the Azure portal, click on **All resources**.
+2. In the **Filter items...** box, type in **lab**.
+3. Select your lab VM. Keep in mind the name of the virtual machine will begin with the "app name" you provided when setting up this workshop environment (in the prerequisite deployment).
+2. At the top of the blade for your VM, click on **Connect**.
+
+    ![Screenshot](images/connect_to_the_lab_vm_1.png)
+
+3. Download and open the RDP file.
+1. When the **Remote Desktop Connection** screen appears, check the **Don't ask me again...** box and click on **Connect** button.
+
+    ![Screenshot](images/ex02_connect_to_the_lab_vm_2.png)
+
+1. Log in with the credentials you specified for the lab VM during the deployment of the workshop prerequisites.
+
+## Task 2: Navigate to Machine Learning Studio
+
+1. In a browser, go to [https://studio.azureml.net](https://studio.azureml.net) and log in using the same account you used in the Azure portal to deploy the prerequisites for this workshop.
 2. Once you are signed in, ensure the workspace that was created as part of the prerequisites is selected from the top bar.
 
-## Task 2: Upload the Sample Datasets
+## Task 3: Upload the Sample Datasets
 
 1. Before you begin creating a machine learning experiment, there are three datasets you need to load.
 2. Download the three CSV sample datasets from here: http://aka.ms/awtdata and save AdventureWorksTravelDatasets.zip to your Desktop.
@@ -41,7 +58,7 @@ This exercise has 8 tasks:
 
 8. Repeat the previous step for the **FlightWeatherWithAirportCodes.csv** and **AirportCodeLocationLookupClean.csv** setting the name for the dataset in a similar fashion.
 
-## Task 3: Start a New Experiment
+## Task 4: Start a New Experiment
 
 1. Click **+ NEW** in the command bar.
 2. In the options that appear, click **Blank Experiment**.
@@ -180,7 +197,7 @@ This exercise has 8 tasks:
 
 42. At this point the Flight Delay Data is prepared, and we turn to preparing the historical weather data.
 
-## Task 4: Prepare the Weather Data
+## Task 5: Prepare the Weather Data
 
 1. To the right of the **FlightDelaysWithAirportCodes** dataset, add the **FlightWeatherWithAirportCodes** dataset.
 
@@ -259,7 +276,7 @@ This exercise has 8 tasks:
 15. Click the first output port of the **Execute R Script** module and select **Visualize**.
 16. In the statistics, verify that WindSpeed, SeaLevelPressure, and HourlyPrecip are now all Numeric Feature types and that they have no missing values.
 
-## Task 5: Join the Flight and Weather Datasets
+## Task 6: Join the Flight and Weather Datasets
 
 1. With both datasets ready, we want to join them together so that we can associate historical flight delay with the weather data at departure time.
 2. Drag the **Join Data** module on to the design surface, beneath and centered between both **Execute R Script** modules. Connect the leftmost output port of the *left* **Execute R module** to leftmost input port of the **Join Data** module, and the leftmost output port of the *right* **Execute R Script** module to the rightmost input port of the **Join Data** module.
@@ -291,7 +308,7 @@ This exercise has 8 tasks:
 
 1. Save your experiment.
 
-## Task 6: Train the Model
+## Task 7: Train the Model
 
 AdventureWorks Travel wants to build a model to predict if a departing flight will have a 15 minute or greater delay. In the historical data they have provided, the indicator for such a delay is found within DepDelay15 (where a value of 1 means delay, 0 means no delay). To create model that predicts such a binary outcome, we can choose from the various Two-Class modules that Azure ML offers. For our purposes, we begin with a Two-Class Logistic Regression. This type of classification module needs to be first trained on sample data that includes the features important to making a prediction and must also include the actual historical outcome for those features.
 
@@ -340,7 +357,7 @@ The typical pattern is split the historical data so a portion is shown to the mo
 
     ![Screenshot](images/train_the_model_9.png)
 
-## Task 7: Operationalize the Experiment
+## Task 8: Operationalize the Experiment
 
 1. Now that we have a functioning model, let's package it up into a predictive experiment that can be called as web service.
 2. In the command bar at the bottom, click **Set Up Web Service** and then select **Predictive Web Service**. If you see that the **Set Up Web Service** option is grayed out, then you may need to run the experiment again by click on the **RUN** button.
@@ -432,7 +449,7 @@ The typical pattern is split the historical data so a portion is shown to the mo
 
     ![Screenshot](images/operationalize_the_experiment_20.png)
 
-## Task 8: Note Web Service Integration Information
+## Task 9: Note Web Service Integration Information
 
 1. From the **Quick Start** page, click the **Use Web Service** link.
 2. Click the Copy button for the **Primary key**, open a copy of Notepad, and paste the value in the editor.

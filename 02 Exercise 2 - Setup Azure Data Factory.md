@@ -13,23 +13,19 @@ This exercise has 4 tasks:
 
 ## Task 1: Connect to the Lab VM
 
-1. From the left side of the Azure portal, click on **Browse &gt;**.
-2. In the **filter** box, type in **virtual**.
-3. Click on Virtual Machine.
+1. From the left side of the Azure portal, click on **All resources**.
+2. In the **Filter items...** box, type in **lab**.
+3. Select your lab VM. Keep in mind the name of the virtual machine will begin with the "app name" you provided when setting up this workshop environment (in the prerequisite deployment).
+2. At the top of the blade for your VM, click on **Connect**.
 
-    ![Screenshot](images/ex02_connect_to_the_lab_vm_0.png)
+    ![Screenshot](images/connect_to_the_lab_vm_1.png)
 
-1. Keep in mind the name of the virtual machine will be the &quot;APPNAME&quot; you provided when setting up this workshop environment.
-2. Click on the **&lt;YOUR\_APP\_NAME&gt;lab** virtual machine from the list and click on **Connect**.
 3. Download and open the RDP file.
-
-    ![Screenshot](images/ex02_connect_to_the_lab_vm_1.png)
-
-1. When Remote Desktop Connection screen appear, check the box **Don&#39;t ask…** and click on **Connect** button.
+1. When the **Remote Desktop Connection** screen appears, check the **Don't ask me again...** box and click on **Connect** button.
 
     ![Screenshot](images/ex02_connect_to_the_lab_vm_2.png)
 
-1. Log in with the credentials you specified for the Lab VM during the deployment of the workshop prerequisites.
+1. Log in with the credentials you specified for the lab VM during the deployment of the workshop prerequisites.
 
 ## Task 2: Install and Configure Data Management Gateway on the Lab VM
 

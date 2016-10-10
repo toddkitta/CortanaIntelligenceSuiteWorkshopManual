@@ -13,24 +13,19 @@ This exercise has 4 tasks:
 
 ## Task 1: Connect to the Lab VM
 
-1. You may already be logged in to the Lab VM from a previous exercise. If so, then go the Remote Desktop session of the Lab VM and skip to Task 2. If not, then to follow steps 2-9 below to log in to the Lab VM again.
-2. From the left side of the Azure portal, click on **Browse &gt;**.
-3. In the **filter** box, type in **virtual**.
-4. Click on **Virtual Machines**.
-
-    ![Screenshot](images/connect_to_the_lab_vm_0.png)
-
-1. Keep in mind the name of the virtual machine will be the unique app name you provided when setting up this workshop environment.
-2. Click on the **&lt;YOUR\_APP\_NAME&gt;lab** virtual machine from the list and click on **Connect**.
+1. From the left side of the Azure portal, click on **All resources**.
+2. In the **Filter items...** box, type in **lab**.
+3. Select your lab VM. Keep in mind the name of the virtual machine will begin with the "app name" you provided when setting up this workshop environment (in the prerequisite deployment).
+2. At the top of the blade for your VM, click on **Connect**.
 
     ![Screenshot](images/connect_to_the_lab_vm_1.png)
 
-1. Download and open the RDP file.
-2. When Remote Desktop Connection screen appear, check the box **Don&#39;t ask…** and click on **Connect** button.
+3. Download and open the RDP file.
+1. When the **Remote Desktop Connection** screen appears, check the **Don't ask me again...** box and click on **Connect** button.
 
-    ![Screenshot](images/connect_to_the_lab_vm_2.png)
+    ![Screenshot](images/ex02_connect_to_the_lab_vm_2.png)
 
-1. Log in with the credentials you specified for the Lab VM during the deployment of the workshop prerequisites.
+1. Log in with the credentials you specified for the lab VM during the deployment of the workshop prerequisites.
 
 ## Task 2: Install Spark ODBC Driver
 
