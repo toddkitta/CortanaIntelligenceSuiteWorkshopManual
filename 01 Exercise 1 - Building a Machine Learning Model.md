@@ -39,7 +39,7 @@ This exercise has 8 tasks:
 
     ![Screenshot](images/upload_the_sample_datasets_1.png)
 
-8. Repeat the previous step for the FlightWeatherWithAirportCodes and AirportCodeLocationsClean setting the name for the dataset in a similar fashion.
+8. Repeat the previous step for the **FlightWeatherWithAirportCodes.csv** and **AirportCodeLocationLookupClean.csv** setting the name for the dataset in a similar fashion.
 
 ## Task 3: Start a New Experiment
 
