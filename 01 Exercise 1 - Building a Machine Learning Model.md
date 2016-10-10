@@ -65,7 +65,7 @@ This exercise has 8 tasks:
 
     ![Screenshot](images/start_a_new_experiment_4.png)
 
-8. Right-click on the port and select **Visualize**.
+8. Right click on the port and select **Visualize**.
 
     ![Screenshot](images/start_a_new_experiment_5.png)
 
