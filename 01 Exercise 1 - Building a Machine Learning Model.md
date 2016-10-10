@@ -100,7 +100,7 @@ This exercise has 8 tasks:
 
 17. You should run your experiment whenever you need to update the metadata describing what data is flowing through the modules, so that newly added modules can be aware of the shape of your data (most module have dialogs that can suggest columns, but before they can make suggestions you need to have run your experiment).
 18. Click the **Clean Missing Data** module to select it. The property panel on the right will display the settings appropriate to the selected module.
-19. In this case, we want to remove rows that have no value for the DepDelay15 column. Begin by clicking **Launch Column Selector**.
+19. In this case, we want to remove rows that have no value for the **DepDel15** column. Begin by clicking **Launch Column Selector**.
 
     ![Screenshot](images/start_a_new_experiment_13.png)
 
