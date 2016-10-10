@@ -20,4 +20,4 @@ Synopsis: The purpose of this exercise is the same as Exercise 1 above. However,
 2. When the experiment is finished running, click **Deploy Web Service**. When the deployment is complete, you will be taken to the Web Service dashboard.
 
     ![Screenshot](images/import_the_completed_predictive_experiment_into_your_workspace_3.png)
-1. At this point, you are now ready to return to and complete Exercise 2. The only task remaining is [Task 8](01 Exercise 1 - Building a Machine Learning Model.md#task-8-note-web-service-integration-information).
+1. At this point, you are now ready to return to and complete Exercise 1. The only task remaining is [Task 8](01 Exercise 1 - Building a Machine Learning Model.md#task-8-note-web-service-integration-information).
