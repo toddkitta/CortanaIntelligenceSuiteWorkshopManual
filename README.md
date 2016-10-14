@@ -1,13 +1,26 @@
 # Cortana Intelligence Suite End-to-end Workshop
 ![Screenshot](images/cis_header.png)
 
-# Workshop Overview
+# Workshop Scenario Overview
 
 AdventureWorks Travel (AWT) provides concierge services for business travelers. In an increasingly crowded market, they are always looking for ways to differentiate themselves and provide added value to their corporate customers.
 
 They are looking to pilot a web-app that their internal customer service agents can use to provide additional information useful to the traveler during the flight booking process. They want to enable their agents to enter in the flight information and produce a prediction as to if the departing flight will encounter a 15 minute or longer delay, taking into account the weather forecasted for the departure hour.
 
-In this lab, attendees will build an end-to-end solution to predict flight delays taking into account the weather forecast.
+In this workshop, attendees will build an end-to-end solution to predict flight delays taking into account the weather forecast.
+
+# Workshop Architecture
+The workshop uses several, but not nearly all, of the components that are part of [Cortana Intelligence Suite](https://www.microsoft.com/en-us/cloud-platform/cortana-intelligence-suite). The goal is to show an end-to-end solution and not necessarily try to work in every component available. The workshop architecture is below and includes:
+
+- Azure ML
+- Azure Data Factory
+- Azure Storage
+- HDInsight Spark
+- Power BI
+- Azure App Service
+
+
+![Screenshot](images/workshop_architecture.png)
 
 # Requirements
 
