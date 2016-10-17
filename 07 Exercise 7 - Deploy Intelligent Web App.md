@@ -2,7 +2,7 @@
 
 Duration: 20 mins
 
-Synopsis: In this exercise, attendees will deploy an intelligent web application to Azure from GitHub. This application leverages the operationalized machine learning model that was deployed in Exercise 1 to bring action-oriented insight to an already existing business process.
+Synopsis: In this exercise, attendees will deploy an intelligent web application to Azure from GitHub. This application leverages the operationalized machine learning model that was deployed in [Exercise 1](01 Exercise 1 - Building a Machine Learning Model.md) to bring action-oriented insight to an already existing business process.
 
 ## Task 1: Deploy Web App from GitHub
 
