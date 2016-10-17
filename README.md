@@ -25,7 +25,7 @@ The workshop uses several, but not nearly all, of the components that are part o
 # Requirements
 
 - Microsoft Azure Subscription should be pay-as-you-go, MSDN, or EA.
-  - Recommendation is to have each user have their own Azure subscription; this will allow every attendee to have their own sandbox.
+  - Recommendation is to have each user have their own Azure subscription. This will allow every attendee to have their own sandbox.
 - Setup is required before performing the steps in these exercises. Please see [http://aka.ms/cortanasetup](http://aka.ms/cortanasetup) before going any further.
 - Please keep in mind that HDInsight cluster and VM you provision as setup for this workshop will incur charges, so provision these resources closest to the workshop date as possible.  Preferably the afternoon/night before the workshop.
 
