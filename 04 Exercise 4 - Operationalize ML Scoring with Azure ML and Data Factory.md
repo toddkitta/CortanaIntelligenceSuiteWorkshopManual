@@ -151,17 +151,12 @@ This exercise has 5 tasks:
                         "executionPriorityOrder": "NewestFirst",
                         "retry": 1
                     },
-                    "scheduler": {
-                        "frequency": "Minute",
-                        "interval": 60
-                    },
                     "name": "MLActivity",
                     "description": "prediction analysis on batch input",
                     "linkedServiceName": "AzureMLLinkedService"
                 }
             ],
-            "start": "2016-09-14T00:00:00Z",
-            "end": "2016-09-15T00:00:00Z"
+            "pipelineMode": "OneTime"
         }
     }
     ```
