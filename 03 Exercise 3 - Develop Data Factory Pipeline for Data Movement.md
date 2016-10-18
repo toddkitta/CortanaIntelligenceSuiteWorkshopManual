@@ -76,3 +76,5 @@ Synopsis: In this exercise, attendees will implement Azure Data Factory pipeline
 2. From the **Resource Explorer** , you should see from the **Activity Windows** (bottom of the screen) the pipeline activity status **Ready**. This indicates the CSV file was successfully copied from your VM to your Azure Blob Storage location.
 
     ![Screenshot](images/create_copy_pipeline_using_the_copy_data_wizard_12.png)
+
+Next Exercise: [Exercise 4 - Operationalize ML Scoring with Azure ML and Data Factory](04 Exercise 4 - Operationalize ML Scoring with Azure ML and Data Factory.md)

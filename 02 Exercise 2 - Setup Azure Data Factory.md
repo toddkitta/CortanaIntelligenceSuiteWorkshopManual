@@ -90,7 +90,10 @@ This exercise has 4 tasks:
 1. Type in a **Data gateway name** like [insert your initial here]-dmg (example **jcho-dmg** ).
 2. Click **OK** button.
 3. Click on **Configure** and copy out the **NEW KEY**.
-4. _Don&#39;t close the current browser session._
+
+    ![Screenshot](images/ex02_create_new_azure_data_factory_service_11.png)
+
+4. _Don't close the current browser session._
 5. Go back to the Remote Desktop session of the virtual machine.
 6. Paste the **Key** into the box in the middle of the screen.
 
@@ -113,3 +116,5 @@ This exercise has 4 tasks:
 1. You can go back to the Azure Data Factory browser page within the Azure Portal, and Click **OK** twice to finish setting up the Data gateway.
 
     ![Screenshot](images/ex02_create_new_azure_data_factory_service_10.png)
+
+Next Exercise: [Exercise 3 - Develop Data Factory Pipeline for Data Movement](03 Exercise 3 - Develop Data Factory Pipeline for Data Movement.md)

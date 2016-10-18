@@ -461,3 +461,5 @@ The typical pattern is split the historical data so a portion is shown to the mo
     * https://ussouthcentral.services.azureml.net/subscriptions/[SOME_GUID]/services/[SOME_OTHER_GUID]/jobs
 
     ![Screenshot](images/operationalize_the_experiment_21.png)
+
+Next Exercise: [Exercise 2 - Setup Azure Data Factory](02 Exercise 2 - Setup Azure Data Factory.md)

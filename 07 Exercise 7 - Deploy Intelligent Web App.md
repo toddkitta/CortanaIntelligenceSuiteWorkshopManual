@@ -24,3 +24,5 @@ Synopsis: In this exercise, attendees will deploy an intelligent web application
 
     ![Screenshot](images/deploy_web_app_from_github_2.png)
 1. **Congratulations!** You have built and deployed an intelligent system to Azure!
+
+Next Exercise: [Exercise 8 - Cleanup of Azure Resources](08 Exercise 8 - Cleanup of Azure Resources.md)

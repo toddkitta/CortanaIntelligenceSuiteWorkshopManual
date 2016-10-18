@@ -187,3 +187,5 @@ This exercise has 5 tasks:
     ![Screenshot](images/monitor_your_pipeline_activities_0.png)
 1. You should start to see **Ready** status activity listed on the bottom of the new window.
 2. Close the **Monitor &amp; Manage** browser tab.
+
+Next Exercise: [Exercise 5 - Summarize Data Using HDInsight Spark](05 Exercise 5 - Summarize Data Using HDInsight Spark.md)

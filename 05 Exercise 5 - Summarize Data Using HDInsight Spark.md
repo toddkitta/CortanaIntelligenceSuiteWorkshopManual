@@ -115,3 +115,5 @@ Synopsis: In this exercise, attendees will prepare a summary of flight delay dat
     ![Screenshot](images/summarize_delays_by_airport_11.png)
 
 1. You can also click on the other buttons like **Pie** , **Scatter** , **Line** , **Area** , and **Bar** to view these visualizations.
+
+Next Exercise: [Exercise 6 - Visualizing in Power BI Desktop](06 Exercise 6 - Visualizing in Power BI Desktop.md)
