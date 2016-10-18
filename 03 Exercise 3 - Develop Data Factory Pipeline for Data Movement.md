@@ -21,12 +21,12 @@ Synopsis: In this exercise, attendees will implement Azure Data Factory pipeline
 1. Optional: Type in a description like: **This pipeline copies CSV file from on-premises virtual machine C:\Data to Azure Blob Storage as a one-time job**.
 2. Select the **Run once now** option.
 3. Click on the **Next** button from the bottom of the screen.
-4. From the Source Data Store screen tab, select **File**.
+4. From the Source Data Store screen tab, select **File Server Share**.
 
     ![Screenshot](images/create_copy_pipeline_using_the_copy_data_wizard_3.png)
 
 1. Click on **Next** button from the bottom of the screen.
-2. From the Specify File Server share connection tab, type **InputLinkedService-OnPremServer** into the **Linked service name**.
+2. From the Specify File Server share connection tab, type **InputConnection-OnPremServer** into the **Connection name** textbox.
 3. For the **Path** , type in **C:\Data**.
 4. For the **User name** , type in the user name that was used to log into the lab virtual machine.
 5. For the **Password** , type in the password that was used to log into the lab virtual machine.
@@ -41,7 +41,7 @@ Synopsis: In this exercise, attendees will implement Azure Data Factory pipeline
 
     ![Screenshot](images/create_copy_pipeline_using_the_copy_data_wizard_5.png)
 
-1. From the File format settings tab, leave everything as defaulted except check the box **Column name in the first data row**.  You can see the preview of the file from the bottom of the screen.
+1. From the **File format settings** tab, leave everything as default except check the box **Column name in the first data row**.  You can see the preview of the file from the bottom of the screen.
 2. Click **Next** button from the bottom of the screen.
 
     ![Screenshot](images/create_copy_pipeline_using_the_copy_data_wizard_6.png)
@@ -51,7 +51,7 @@ Synopsis: In this exercise, attendees will implement Azure Data Factory pipeline
 
     ![Screenshot](images/create_copy_pipeline_using_the_copy_data_wizard_7.png)
 
-1. From the **Specify the Azure Blob storage account** tab, Type in **OutputLinkedService-AzureBlobStorage** into the **Linked service name**.
+1. From the **Specify the Azure Blob storage account** tab, Type in **OutputLinkedService-AzureBlobStorage** into the **Connection name**.
 2. From the **Storage account name** dropdown list, select **&lt;YOUR\_APP\_NAME&gt;sparkstorage**.
 3. Click on the **Next** button from the bottom of the screen.
 
@@ -62,7 +62,7 @@ Synopsis: In this exercise, attendees will implement Azure Data Factory pipeline
 
     ![Screenshot](images/create_copy_pipeline_using_the_copy_data_wizard_9.png)
 
-1. From the File format settings tab, leave everything as defaulted except check the box **Add header to file**. You can see the preview of the file from the bottom of the screen.
+1. From the **File format settings** tab, leave everything as defaulted except check the box **Add header to file**. You can see the preview of the file from the bottom of the screen.
 2. Click **Next** button from the bottom of the screen.
 
     ![Screenshot](images/create_copy_pipeline_using_the_copy_data_wizard_10.png)

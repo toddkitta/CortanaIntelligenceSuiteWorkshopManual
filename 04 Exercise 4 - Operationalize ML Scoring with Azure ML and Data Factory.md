@@ -26,8 +26,7 @@ This exercise has 5 tasks:
     ![Screenshot](images/create_azure_ml_linked_service_2.png)
 1. Select **Azure ML** from the list.
 2. In the new window, be sure change the JSON file to match the following:
-   * In the new window, be sure change the JSON file to match the following or copy the below JSON text and paste into the browser window.
-    * Be sure to follow steps 7 to 13 to obtain **mlEndPoint** URL and **apiKey** value.
+    * Back in [Exercise 1, Task 9](01 Exercise 1 - Building a Machine Learning Model.md#task-9-note-web-service-integration-information) you noted some values related to your ML web service. The value for **mlEndPoint**  below is your web service's **Batch Requests** URL (remembering to remove the query string), and **apiKey** is the **Primary Key** of your web service.
 
     ```json
     {
@@ -42,15 +41,6 @@ This exercise has 5 tasks:
         }
     }
     ```
-1. Open a browser and navigate to your ML Studio and click **Web Services**. You can always get there by going to [https://studio.azureml.net/](https://studio.azureml.net/).
-2. Click on your web service.
-3. On this page, take note of the API key.  Copy the **API key** value and paste it in for the **apiKey** above in the JSON.
-4. Below the Default Endpoint section, click the **Batch Execution** link.
-
-    ![Screenshot](images/create_azure_ml_linked_service_3.png)
-1. On this API Documentation page, scroll down to the first request (for Submit job) and observe the URL displayed.  Copy the URL starting at **https:** though (and including) **jobs** and paste it in for the **mlEndpoint** in red.
-  1. Example URL: [https://ussouthcentral.services.azureml.net/workspaces/64f94487f2bc476dae5e02b37b8d8b17/services/ad88ee0b5f54649963116bc98fa03ab/jobs](https://ussouthcentral.services.azureml.net/workspaces/64f94487f2bc476dae5e02b37b8d8b17/services/ad88ee0b5f54649963116bc98fa03ab/jobs)
-    ![Screenshot](images/create_azure_ml_linked_service_4.png)
 1. Click **Deploy**.
 
 ## Task 2: Create Azure ML Input Dataset
