@@ -26,7 +26,7 @@ This exercise has 5 tasks:
     ![Screenshot](images/create_azure_ml_linked_service_2.png)
 1. Select **Azure ML** from the list.
 2. In the new window, be sure change the JSON file to match the following:
-    * Back in [Exercise 1, Task 9](01 Exercise 1 - Building a Machine Learning Model.md#task-9-note-web-service-integration-information) you noted some values related to your ML web service. The value for **mlEndPoint**  below is your web service's **Batch Requests** URL (remembering to remove the query string), and **apiKey** is the **Primary Key** of your web service.
+    * Back in [Exercise 1, Task 9](01 Exercise 1 - Building a Machine Learning Model.md#task-9-deploy-web-service-and-note-api-information) you noted some values related to your ML web service. The value for **mlEndPoint**  below is your web service's **Batch Requests** URL (remembering to remove the query string), and **apiKey** is the **Primary Key** of your web service.
 
     ```json
     {

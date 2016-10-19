@@ -14,7 +14,7 @@ This exercise has 9 tasks:
 * [Task 6: Join the Flight and Weather Datasets](#task-6-join-the-flight-and-weather-datasets)
 * [Task 7: Train the Model](#task-7-train-the-model)
 * [Task 8: Operationalize the Experiment](#task-8-operationalize-the-experiment)
-* [Task 9: Note Web Service Integration Information](#task-9-note-web-service-integration-information)
+* [Task 9: Note Web Service Integration Information](#task-9-deploy-web-service-and-note-api-information)
 
 ## Task 1: Connect to the Lab VM
 
