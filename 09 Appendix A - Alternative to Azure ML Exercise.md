@@ -17,7 +17,4 @@ Synopsis: The purpose of this exercise is the same as Exercise 1 above. However,
 
     ![Screenshot](images/import_the_completed_predictive_experiment_into_your_workspace_2.png)
 1. Run the experiment. This will take 5-7 minutes.
-2. When the experiment is finished running, click **Deploy Web Service**. When the deployment is complete, you will be taken to the Web Service dashboard.
-
-    ![Screenshot](images/import_the_completed_predictive_experiment_into_your_workspace_3.png)
 1. At this point, you are now ready to return to and complete Exercise 1. The only task remaining is [Task 9](01 Exercise 1 - Building a Machine Learning Model.md#task-9-note-web-service-integration-information).

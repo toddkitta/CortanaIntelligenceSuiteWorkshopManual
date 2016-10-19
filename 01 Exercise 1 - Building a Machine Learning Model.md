@@ -440,7 +440,10 @@ The typical pattern is split the historical data so a portion is shown to the mo
     ![Screenshot](images/operationalize_the_experiment_18.png)
 
 1. Run the experiment. This should take 5-7 minutes.
-2. When the experiment is finished running, click **Deploy Web Service [New]**. This will launch the web service deployment wizard.
+
+## Task 9: Deploy Web Service and Note API Information
+
+1. When the experiment is finished running, click **Deploy Web Service [New]**. This will launch the web service deployment wizard.
 1. You can leave the default name, select **Create new...** for **Price Plan** and then provide a **Plan Name** value. Finally, under **Monthly Plan Options** select **Standard DevTest**.
 
     ![Screenshot](images/operationalize_the_experiment_19.png)
@@ -448,9 +451,6 @@ The typical pattern is split the historical data so a portion is shown to the mo
 1. Scroll down and click the **Deploy** button. After deployment is completed, you will be taken to the web services **Quick Start** page for your new web service.
 
     ![Screenshot](images/operationalize_the_experiment_20.png)
-
-## Task 9: Note Web Service Integration Information
-
 1. From the **Quick Start** page, click the **Use Web Service** link.
 2. Click the Copy button for the **Primary key**, open a copy of Notepad, and paste the value in the editor.
 2. Click the Copy button for the **Request-Response** link. The URL will look something like the following:
