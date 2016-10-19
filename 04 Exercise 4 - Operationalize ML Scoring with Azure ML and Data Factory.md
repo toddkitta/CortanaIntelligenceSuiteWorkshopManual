@@ -69,8 +69,8 @@ This exercise has 5 tasks:
                 }
             },
             "availability": {
-                "frequency": "Minute",
-                "interval": 60
+                "frequency": "Hour",
+                "interval": 12
             }
         }
     }
@@ -102,8 +102,8 @@ This exercise has 5 tasks:
                 }
             },
             "availability": {
-                "frequency": "Minute",
-                "interval": 60
+                "frequency": "Hour",
+                "interval": 12
             }
         }
     }
@@ -156,10 +156,12 @@ This exercise has 5 tasks:
                     "linkedServiceName": "AzureMLLinkedService"
                 }
             ],
-            "pipelineMode": "OneTime"
+            "start": "2016-09-14T00:00:00Z",
+            "end": "2016-09-15T00:00:00Z"
         }
     }
     ```
+1. Make sure to change the start to today's date and end to today + 1 date.
 2. Click **Deploy**.
 
 ## Task 5: Monitor Your Pipeline Activities
