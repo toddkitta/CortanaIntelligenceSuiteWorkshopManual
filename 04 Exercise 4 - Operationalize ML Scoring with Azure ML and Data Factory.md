@@ -160,7 +160,6 @@ This exercise has 5 tasks:
         }
     }
     ```
-1. Make sure to change the **start** to today's date and **end** to today + 1 date.
 2. Click **Deploy**.
 
 ## Task 5: Monitor Your Pipeline Activities
