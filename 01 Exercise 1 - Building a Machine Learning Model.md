@@ -326,7 +326,7 @@ The typical pattern is split the historical data so a portion is shown to the mo
 
     ![Screenshot](images/train_the_model_2.png)
 
-1. On the **Properties** panel for the Train Model module, set the Selected columns to **DepDelay15**.
+1. On the **Properties** panel for the Train Model module, set the Selected columns to **DepDel15**.
 
     ![Screenshot](images/train_the_model_3.png)
 
