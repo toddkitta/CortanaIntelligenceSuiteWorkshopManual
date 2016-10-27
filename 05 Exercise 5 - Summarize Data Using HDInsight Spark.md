@@ -97,6 +97,8 @@ Synopsis: In this exercise, attendees will prepare a summary of flight delay dat
 2. To accomplish creating the table, enter a new paragraph and add the following Scala code and run it.
 
     ```scala
+    sqlContext.sql("DROP TABLE IF EXISTS FlightDelaysSummary");
+
     val summary = sqlContext.sql("SELECT  OriginAirportCode, OriginLatLong, Month, Day, Hour, Sum(DelayPredicted) NumDelays, Avg(DelayProbability) AvgDelayProbability FROM FlightDelays WHERE Month = 4 GROUP BY OriginAirportCode, OriginLatLong, Month, Day, Hour Having Sum(DelayPredicted) > 1")
     summary.saveAsTable("FlightDelaysSummary")
     ```
