@@ -25,7 +25,9 @@ This exercise has 4 tasks:
 
     ![Screenshot](images/ex02_connect_to_the_lab_vm_2.png)
 
-1. Log in with the credentials you specified for the lab VM during the deployment of the workshop prerequisites.
+1. Log in with the following credentials:
+   - User name: **cortana**
+   - Password: **Password.1!!**
 
 ## Task 2: Install Spark ODBC Driver
 

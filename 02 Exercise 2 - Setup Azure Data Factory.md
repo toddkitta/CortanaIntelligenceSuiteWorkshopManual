@@ -25,7 +25,9 @@ This exercise has 4 tasks:
 
     ![Screenshot](images/ex02_connect_to_the_lab_vm_2.png)
 
-1. Log in with the credentials you specified for the lab VM during the deployment of the workshop prerequisites.
+1. Log in with the following credentials:
+   - User name: **cortana**
+   - Password: **Password.1!!**
 
 ## Task 2: Install and Configure Data Management Gateway on the Lab VM
 
@@ -53,7 +55,7 @@ This exercise has 4 tasks:
 ## Task 3: Log in to the Azure Portal
 
 1. Launch a new browser session and navigate to [https://portal.azure.com](https://portal.azure.com). Once prompted, log in with your Microsoft Azure credentials. If prompted, choose whether your account is an organization account or a Microsoft Account.  This will be based on which account was used to provision your Azure subscription that are using for these labs.
-  - **Note** : You may need to launch an InPrivate/Incognito session in your browser if you have multiple Microsoft Accounts.
+   - **Note** : You may need to launch an InPrivate/Incognito session in your browser if you have multiple Microsoft Accounts.
 
 ## Task 4: Create new Azure Data Factory Service
 

@@ -30,7 +30,9 @@ This exercise has 9 tasks:
 
     ![Screenshot](images/ex02_connect_to_the_lab_vm_2.png)
 
-1. Log in with the credentials you specified for the lab VM during the deployment of the workshop prerequisites.
+1. Log in with the following credentials:
+   - User name: **cortana**
+   - Password: **Password.1!!**
 
 ## Task 2: Navigate to Machine Learning Studio
 
@@ -41,11 +43,11 @@ This exercise has 9 tasks:
 
 1. Before you begin creating a machine learning experiment, there are three datasets you need to load.
 2. Download the three CSV sample datasets from here: http://aka.ms/awtdata and save AdventureWorksTravelDatasets.zip to your Desktop.
-  - **Note:** You will need to unblock the zip file before extracting its files. Do this by right clicking on it, selecting **Properties**, and then unblocking the file in the resulting dialog.
+   - **Note:** You will need to unblock the zip file before extracting its files. Do this by right clicking on it, selecting **Properties**, and then unblocking the file in the resulting dialog.
 3. Extract the ZIP and verify you have the following files:
-  - FlightDelaysWithAirportCodes.csv
-  - FlightWeatherWithAirportCodes.csv
-  - AirportCodeLocationClean.csv
+   - FlightDelaysWithAirportCodes.csv
+   - FlightWeatherWithAirportCodes.csv
+   - AirportCodeLocationClean.csv
 4. Click **+ NEW** at the bottom, point to **Dataset** , and select **From Local File**.
 
     ![Screenshot](images/upload_the_sample_datasets_0.png)

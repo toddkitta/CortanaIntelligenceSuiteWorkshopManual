@@ -14,9 +14,13 @@ Synopsis: In this exercise, attendees will prepare a summary of flight delay dat
 
     ![Screenshot](images/summarize_delays_by_airport_1.png)
 
-1. From the **Cluster Dashboards** , click **Jupyter Notebooks**. You will have to login with the cluster username/password at this step.
+1. From the **Cluster Dashboards** , click **Jupyter Notebooks**.
 
     ![Screenshot](images/summarize_delays_by_airport_2.png)
+
+1. A new browser tab should open and you will be prompted for credentials. Log in with the following:
+   - User name: **cortana**
+   - Password: **Password.1!!**
 
 1. On the **Jupyter notebooks** screen, click on the **New** dropdown list from top right corner and click **Spark**.
 
@@ -28,6 +32,8 @@ Synopsis: In this exercise, attendees will prepare a summary of flight delay dat
 
     ```scala
     import sqlContext.implicits._
+
+    sqlContext.sql("DROP TABLE IF EXISTS FlightDelays");
 
     val flightDelayTextLines = sc.textFile("wasb:///flights/Scored_FlightsAndWeather.csv")
 

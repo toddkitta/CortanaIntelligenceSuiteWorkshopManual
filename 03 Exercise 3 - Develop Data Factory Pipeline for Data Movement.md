@@ -52,8 +52,8 @@ Synopsis: In this exercise, attendees will implement Azure Data Factory pipeline
     ![Screenshot](images/create_copy_pipeline_using_the_copy_data_wizard_7.png)
 
 1. From the **Specify the Azure Blob storage account** tab, Type in **OutputLinkedService-AzureBlobStorage** into the **Connection name**.
-2. From the **Storage account name** dropdown list, select **&lt;YOUR\_APP\_NAME&gt;sparkstorage**.
-3. Click on the **Next** button from the bottom of the screen.
+2. From the **Storage account name** dropdown list, select **<YOUR_APP_NAME>sparkstorage**. *Make sure you select the storage account with the **sparkstorage** suffix or you will have issues with subsequent exercises.*
+3. Before clicking **Next** at the bottom of the screen, *please make sure you have selected the right storage account* (it will have the **sparkstorage** suffix). Finally, click **Next**.
 
     ![Screenshot](images/create_copy_pipeline_using_the_copy_data_wizard_8.png)
 
