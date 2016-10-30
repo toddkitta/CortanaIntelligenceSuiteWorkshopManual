@@ -10,7 +10,7 @@ They are looking to pilot a web-app that their internal customer service agents 
 In this workshop, attendees will build an end-to-end solution to predict flight delays taking into account the weather forecast.
 
 # Workshop Architecture
-The workshop uses several, but not nearly all, of the components that are part of [Cortana Intelligence Suite](https://www.microsoft.com/en-us/cloud-platform/cortana-intelligence-suite). The goal is to show an end-to-end solution and not necessarily try to work in every component available. The workshop architecture is below and includes:
+The workshop uses several, but not nearly all, of the components that are part of [Cortana Intelligence Suite](https://www.microsoft.com/en-us/cloud-platform/cortana-intelligence-suite). The goal is to show an end-to-end solution and not necessarily try to work in every component possible. The workshop architecture is below and includes:
 
 - Azure ML
 - Azure Data Factory
