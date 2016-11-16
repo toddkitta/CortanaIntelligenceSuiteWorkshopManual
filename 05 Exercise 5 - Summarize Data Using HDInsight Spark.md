@@ -1,6 +1,6 @@
 # Exercise 5: Summarize Data Using HDInsight Spark
 
-Duration: 60 mins
+Duration: 20 mins
 
 Synopsis: In this exercise, attendees will prepare a summary of flight delay data in HDFS using Spark SQL.
 
