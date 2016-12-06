@@ -28,8 +28,8 @@ Synopsis: In this exercise, attendees will implement Azure Data Factory pipeline
 1. Click on **Next** button from the bottom of the screen.
 2. From the Specify File Server share connection tab, type **InputConnection-OnPremServer** into the **Connection name** textbox.
 3. For the **Path** , type in **C:\Data**.
-4. For the **User name**, type in **cortana**.
-5. For the **Password**, type in **Password.1!!**.
+4. For the **User name**, type in **cortana**
+5. For the **Password**, type in **Password.1!!**
 6. For the Gateway, it should already be filled in with the gateway connection you created in the previous exercise.
 
     ![Screenshot](images/create_copy_pipeline_using_the_copy_data_wizard_4.png)
