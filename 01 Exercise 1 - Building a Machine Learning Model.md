@@ -96,87 +96,15 @@ This exercise has 9 tasks:
 
     ![Screenshot](images/start_a_new_experiment_7.png)
 
-11. Notice in the Statistics panel that a value of 27444 appears for Missing Values. This means that 27,444 rows do not have a value in this column. Since this value is very important to our model, we will eliminate any rows that do not have a value for this column.
-12. To eliminate these problem rows, close the dialog and go back to the design surface. From the toolbar, search for **Clean Missing Data**.
+11. Notice in the Statistics panel that a value of 27444 appears for Missing Values. This means that 27,444 rows do not have a value in this column. Since this value is very important to our model, we will eliminate any rows that do not have a value for this column. In fact, removing these missing values is just one of several "data wrangling" tasks that need to be done. Here is a list of tasks that we will need to do on this dataset before it is ready to be processed by a machine learning algorithm.
+    1. Remove rows with missing **DepDel15** values.
+    1. Create a new column that represents the departure hour. This will be based on the **CRSDepTime** column.
+    1. Trim down the list of columns needed to do the analysis at hand.
+    1. Change the data types of a few columns. Specifically, a few of the columns in this dataset need to be represented as **Categorical** to Azure ML.
 
-    ![Screenshot](images/start_a_new_experiment_8.png)
+12. In order to perform the aforementioned data manipulation tasks, you could use built-in Azure ML modules for each task or you could use a script (such as R or Python). Here, you will use R. To do this, add an **Execute R Script** (recall you can search for modules on the left) module beneath the dataset and connect the output of the dataset to the first input port (leftmost) of the **Execute R Script**.
 
-13. Drag this module on to the design surface beneath your **FlightDelaysWithAirportCodes** dataset. Click the small circle at the bottom of the **FlightDelaysWithAirportCodes** dataset, drag and release when your mouse is over the circle found in the top center of the **Clean Missing Data** module. These circles are referred to as ports, and by taking this action you have connected the output port of the dataset with the input port of the **Clean Missing Data** module, which means the data from the dataset will flow along this path.
-
-    ![Screenshot](images/start_a_new_experiment_9.png)
-
-14. Click **Save** on the command bar at the bottom to save your in-progress experiment.
-
-    ![Screenshot](images/start_a_new_experiment_10.png)
-
-15. Click **Run** in the command bar at the bottom to run the experiment.
-
-    ![Screenshot](images/start_a_new_experiment_11.png)
-
-16. When the experiment is finished running, you will see a finished message in the top right corner of the design surface, and green check marks over all modules that ran.
-
-    ![Screenshot](images/start_a_new_experiment_12.png)
-
-17. You should run your experiment whenever you need to update the metadata describing what data is flowing through the modules, so that newly added modules can be aware of the shape of your data (most module have dialogs that can suggest columns, but before they can make suggestions you need to have run your experiment).
-18. Click the **Clean Missing Data** module to select it. The property panel on the right will display the settings appropriate to the selected module.
-19. In this case, we want to remove rows that have no value for the **DepDel15** column. Begin by clicking **Launch Column Selector**.
-
-    ![Screenshot](images/start_a_new_experiment_13.png)
-
-20. Ensuring **With Rules** is selected on the left side of the dialog, under the **Begin With** section, select **No Columns**. In the row of controls that appears, change the second drop down to **Column Names**. Then in the text box that appears begin to type **DepDel15** and select that item from type-ahead list.
-
-    ![Screenshot](images/start_a_new_experiment_14.png)
-
-21. Click the checkmark to apply the settings. You have now indicated to the Clean Missing Data module that DepDel15 is the only column it should act on.
-
-    ![Screenshot](images/start_a_new_experiment_15.png)
-
-22. In the **Properties** panel for **Clean Missing Data**, click the **Cleaning mode** drop down and select **Remove entire row**. Now your **Clean Missing Data** module is fully configured to remove any rows that are missing values for **DepDel15**.
-
-    ![Screenshot](images/start_a_new_experiment_16.png)
-
-23. To verify the result, run your experiment again. After it is finished, click the leftmost output port of the Clean Missing Data module and select **Visualize**.
-24. In the dialog that appears, scroll over to **DepDel15** and click the column. In the statistics you should see that Missing Values reads 0.
-
-    ![Screenshot](images/start_a_new_experiment_17.png)
-
-25. Our model will approximate departure times to the nearest hour, but departure time is captured as an integer. For example, 8:37 am is captured as 837. Therefore, we will need to process the **CRSDepTime** column and round it down to the nearest hour.
-26. To perform this rounding two steps are required. First, you will need to divide the value by 100 (so that 837 becomes 8.37). Second, you will round this value down to the nearest hour (so that 8.37 becomes 8).
-27. Begin by adding an **Apply Math Operation** module beneath the Clean Missing Data module and connect the leftmost output port of the **Clean Missing Data** module to the input port of the **Apply Math Operation**.
-
-    ![Screenshot](images/start_a_new_experiment_18.png)
-
-28. In the properties of the Apply Math Operation, set the Category to **Operations** , Basic operation to **Divide** , Operation argument type to **Constant** , Constant operation argument to **100**, Selected columns to **CRSDepTime** (see screenshot below), and Output mode to **Append**.
-
-    ![Screenshot](images/start_a_new_experiment_19.png)
-
-    ![Screenshot](images/start_a_new_experiment_20.png)
-
-29. Run the experiment to update the metadata.
-30. This module will add a new column to the dataset called **Divide(CRSDeptTime_$100)**, but we want to rename it to **CRSDepHour**. To do so, add an **Edit Metadata** module and connect its input port to the output port of **Apply Math Operation**.
-
-    ![Screenshot](images/start_a_new_experiment_21.png)
-
-31. For the properties of the **Edit Metadata**, set the Selected Columns to **Divide(CRSDeptTime_$100)** and New column names to **CRSDepHour**.
-
-    ![Screenshot](images/start_a_new_experiment_22.png)
-
-    ![Screenshot](images/start_a_new_experiment_23.png)
-
-32. Run the experiment to update the metadata.
-33. Add another **Apply Math Operation** module to round the time down to the nearest hour and connect it to the **Edit Metadata** module.
-
-34. Set the **Category** to **Rounding**, **Selected columns** to **CRSDepHour** (see screenshot for how to select), and Output mode to **Inplace**.
-
-    ![Screenshot](images/start_a_new_experiment_24.png)
-
-    ![Screenshot](images/start_a_new_experiment_25.png)
-
-34. Run the experiment to update the metadata.
-35. We do not need all of the columns present in the FlightDelaysWithAirportCodes dataset. To pare down the columns we can use multiple options, but in this case we chose to use an **Execute R Script** module that selects out only the columns of interest using R code.
-36. Add an **Execute R Script** module beneath the last **Apply Math Operation**, and connect the output of the **Apply Math Operation** to the first input port (leftmost) of the **Execute R Script**.
-
-    ![Screenshot](images/start_a_new_experiment_26.png)
+    ![Screenshot](images/ex01_connect_flightdelayswithairportcodes_to_r_module.png)
 
 37. In the **Properties** panel for **Execute R Script**, click the "double window" icon to maximize the script editor.
 
@@ -186,16 +114,30 @@ This exercise has 9 tasks:
 
     ``` R
     ds.flights <- maml.mapInputPort(1)
+
+    # Remove rows with missing values in DepDel15
+    ds.flights <- ds.flights[!is.na(ds.flights$DepDel15), ]
+
+    # Create a column for departure hour called CRSDepHour
+    ds.flights$CRSDepHour <- floor(ds.flights$CRSDepTime / 100)
+
     # Trim the columns to only those we will use for the predictive model
-    ds.flights = ds.flights[, c("OriginAirportCode","OriginLatitude", "OriginLongitude", "Month", "DayofMonth", "CRSDepHour", "DayOfWeek", "Carrier", "DestAirportCode", "DestLatitude", "DestLongitude", "DepDel15")]
+    ds.flights = ds.flights[, c("OriginAirportCode", "Month", "DayofMonth", "CRSDepHour", "DayOfWeek", "Carrier", "DestAirportCode", "DepDel15")]
+
+    # cast some of the data types to factor (categorical)
+    ds.flights$DayOfWeek <- as.factor(ds.flights$DayOfWeek)
+    ds.flights$Carrier <- as.factor(ds.flights$Carrier)
+    ds.flights$DestAirportCode <- as.factor(ds.flights$DestAirportCode)
+    ds.flights$OriginAirportCode <- as.factor(ds.flights$OriginAirportCode)
+
     maml.mapOutputPort("ds.flights");
     ```
 
-39. Run the experiment to update the metadata (this may take a minute or two to complete).
+39. Run the experiment to update the metadata and process the data (this may take a minute or two to complete).
 40. Right click on the leftmost output port of your **Execute R Script** module and select **Visualize**.
-41. Verify that the dataset only contains the 12 columns referenced in the R script.
+41. Compare the data in this view with the data before it was processed by the R script (recall the list of manipulations above). Verify that the dataset only contains the 8 columns referenced in the R script.
 
-    ![Screenshot](images/start_a_new_experiment_28.png)
+    ![Screenshot](images/ex01_data_viz_after_flightdelayswithairportcodes_r_module.png)
 
 42. At this point the Flight Delay Data is prepared, and we turn to preparing the historical weather data.
 
