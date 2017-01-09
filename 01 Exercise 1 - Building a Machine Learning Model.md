@@ -102,7 +102,7 @@ This exercise has 9 tasks:
     1. Trim down the list of columns needed to do the analysis at hand.
     1. Change the data types of a few columns. Specifically, a few of the columns in this dataset need to be represented as **Categorical** to Azure ML.
 
-12. In order to perform the aforementioned data manipulation tasks, you could use built-in Azure ML modules for each task or you could use a script (such as R or Python). Here, you will use R. To do this, add an **Execute R Script** (recall you can search for modules on the left) module beneath the dataset and connect the output of the dataset to the first input port (leftmost) of the **Execute R Script**.
+12. In order to perform the aforementioned data manipulation tasks, you could use built-in Azure ML modules for each task or you could use a script (such as R or Python). Here, you will use R. To do this, add an **Execute R Script** (recall you can search for modules on the left) module beneath the flights dataset and connect the output of the dataset to the first input port (leftmost) of the **Execute R Script**.
 
     ![Screenshot](images/ex01_connect_flightdelayswithairportcodes_to_r_module.png)
 
@@ -164,27 +164,32 @@ This exercise has 9 tasks:
 
     ![Screenshot](images/prepare_the_weather_data_4.png)
 
-7. Let us begin by cleaning up the missing values for both WindSpeed and HourlyPrecip.
-8. Below the **FlightWeatherWithAirportCode** dataset, drop a **Clean Missing Data** module and connect the output of the dataset to the input of module.
+7. As with the manipulation of the flight data, here you will use R script to perform the necessary data manipulation tasks on the weather data. The following steps will be taken:
+    1. Substitue missing values in the **HourlyPrecip** and **WindSpeed** columns.
+    1. Create a new column called **Hour** based on the **Time** column.
+    1. Replace the **WindSpeed** values that contain **M**.
+    1. Replace the **SeaLevelPressure** values that contain **M**.
+    1. Replace the **HourlyPrecip** values that contain **T**.
+    1. Change the data types of **WindSpeed**, **SeaLevelPressure**, and **HourlyPrecip** to numeric.
+    1. Change the data type of **AirportCode** to categorical.
+    1. Reduce the number of columns in the dataset.
 
-    ![Screenshot](images/prepare_the_weather_data_5.png)
+12. Add an **Execute R Script** module beneath the weather dataset and connect the output of the dataset to the first input port (leftmost) of the **Execute R Script**.
 
-9. Run the experiment to update the metadata available to the Clean Missing Data module.
-10. In the **Properties** panel for **Clean Missing Data**, set the Selected columns to **HourlyPrecip** and **WindSpeed** (see screenshot for help selecting if needed), set the **Cleaning mode** to **Custom substitution value** and set the Replacement value to **0.0**.
+    ![Screenshot](images/ex01_connect_weather_to_r_module.png)
 
-    ![Screenshot](images/prepare_the_weather_data_6.png)
+37. In the **Properties** panel for **Execute R Script**, click the "double window" icon to maximize the script editor.
 
-    ![Screenshot](images/prepare_the_weather_data_7.png)
+    ![Screenshot](images/start_a_new_experiment_27.png)
 
-11. Next, add an **Execute R Script** module below the Clean Missing Data module and connect the first output port of the former to the first input port of the latter.
-
-    ![Screenshot](images/prepare_the_weather_data_8.png)
-
-12. In the **Properties** panel for the **Execute R Script**, click the "double window" icon to open the script editor.
-13. Paste in the following script and click the checkmark. This script replaces the HourlyPrecip values having T with 0.05, WindSpeed values of M with 0.0, and the SeaLevelPressure values of M with the global average pressure of 29.92. It also narrows the dataset to just the few feature columns we want to use with our model.
+38. Replace the default script with the following and click the checkmark to save it.
 
     ``` R
     ds.weather <- maml.mapInputPort(1)
+
+    # substitute missing values in HourlyPrecip & WindSpeed
+    ds.weather$HourlyPrecip[is.na(ds.weather$HourlyPrecip)] <- 0.0
+    ds.weather$WindSpeed[is.na(ds.weather$WindSpeed)] <- 0.0
 
     # Round weather time up to the next hour since
     # that's the hour for which we want to use flight data
@@ -210,15 +215,17 @@ This exercise has 9 tasks:
     # Pare down the variables in the Weather dataset
     ds.weather = ds.weather[, c("AirportCode", "Month", "Day", "Hour", "WindSpeed", "SeaLevelPressure", "HourlyPrecip")]
 
+    # cast some of the data types to factor (categorical)
+    ds.weather$AirportCode <- as.factor(ds.weather$AirportCode)
+
     maml.mapOutputPort("ds.weather");
     ```
 
-14. Run the experiment. Currently it should appear as follows:
+39. Run the experiment to update the metadata and process the data (this may take a minute or two to complete).
+40. Right click on the leftmost output port of your **Execute R Script** module and select **Visualize**.
+41. Compare the data in this view with the data before it was processed by the R script (recall the list of manipulations above). Verify that the dataset only contains the 7 columns referenced in the R script. Also verify that **WindSpeed**, **SeaLevelPressure**, and **HourlyPrecip** are now all Numeric Feature types and that they have no missing values.
 
-    ![Screenshot](images/prepare_the_weather_data_9.png)
-
-15. Click the first output port of the **Execute R Script** module and select **Visualize**.
-16. In the statistics, verify that WindSpeed, SeaLevelPressure, and HourlyPrecip are now all Numeric Feature types and that they have no missing values.
+    ![Screenshot](images/ex01_data_viz_after_weather_r_module.png)
 
 ## Task 6: Join the Flight and Weather Datasets
 
@@ -235,21 +242,11 @@ This exercise has 9 tasks:
 
     ![Screenshot](images/join_the_flight_and_weather_datasets_2.png)
 
-1. Leave the Join Type at inner join and *uncheck* **Keep right key columns in joined table** (so that we do not include the redundant values of AirportCode, Month, Day, and Hour).
+1. Make sure **Join Type** is set to **Inner Join** and *uncheck* **Keep right key columns in joined table** (so that we do not include the redundant values of AirportCode, Month, Day, and Hour).
 
     ![Screenshot](images/join_the_flight_and_weather_datasets_3.png)
 
-1. Next, add an **Edit Metadata** module and connect its input port to the output port of the **Join Data** module. We will use this module to convert the fields that were unbounded String feature types, to the enumeration like Categorical feature. On the **Properties** panel, set the Selected columns to **DayOfWeek**, **Carrier**, **DestAirportCode**, and **OriginAirportCode**. Set the Categorical drop down to **Make categorical**.
-
-    ![Screenshot](images/join_the_flight_and_weather_datasets_4.png)
-
-    ![Screenshot](images/join_the_flight_and_weather_datasets_5.png)
-
 1. Run the experiment to update the metadata.
-2. Add a **Select Columns in Dataset** module, connect the output of the previous **Edit Metadata** to the input of the **Select Columns in Dataset** module, then set the selected columns to *exclude* (see the screenshot for how to do this): **OriginLatitude** , **OriginLongitude** , **DestLatitude** , and **DestLongitude**.
-
-    ![Screenshot](images/join_the_flight_and_weather_datasets_6.png)
-
 1. Save your experiment.
 
 ## Task 7: Train the Model
@@ -258,11 +255,11 @@ AdventureWorks Travel wants to build a model to predict if a departing flight wi
 
 The typical pattern is split the historical data so a portion is shown to the model for training purposes, and another portion is reserved to test just how well the trained model performs against examples it has not seen before.
 
-1. Drag a **Split Data** module beneath **Select Columns in Dataset** and connect them.
+1. Drag a **Split Data** module beneath **Join Data** and connect them.
 
     ![Screenshot](images/train_the_model_0.png)
 
-1. On the **Properties** panel for the Split Data module, set the Fraction of rows in the first output dataset to **0.7** (so 70% of the historical data will flow to output port 1). Set the Random seed to **7634**.
+1. On the **Properties** panel for the **Split Data** module, set the Fraction of rows in the first output dataset to **0.7** (so 70% of the historical data will flow to output port 1). Set the Random seed to **7634**. Setting this field to a "magic number" such as **7634** will simply allow you to recreate your random split of data as long as you use the same seed.
 
     ![Screenshot](images/train_the_model_1.png)
 
@@ -270,7 +267,7 @@ The typical pattern is split the historical data so a portion is shown to the mo
 
     ![Screenshot](images/train_the_model_2.png)
 
-1. On the **Properties** panel for the Train Model module, set the Selected columns to **DepDel15**.
+1. On the **Properties** panel for the Train Model module, set the Selected columns to **DepDel15**. This is the column we are trying to predict.
 
     ![Screenshot](images/train_the_model_3.png)
 
@@ -283,7 +280,7 @@ The typical pattern is split the historical data so a portion is shown to the mo
     ![Screenshot](images/train_the_model_5.png)
 
 1. Run the experiment.
-2. When the experiment is finished running (which may take a few minutes), right click on the output port of the Score Model module and select **Visualize** to see the results of its predictions. You should have a total of 13 columns.
+2. When the experiment is finished running (which may take a minute or two), right click on the output port of the Score Model module and select **Visualize** to see the results of its predictions. You should have a total of 13 columns.
 
     ![Screenshot](images/train_the_model_6.png)
 
@@ -308,46 +305,27 @@ The typical pattern is split the historical data so a portion is shown to the mo
 
     ![Screenshot](images/operationalize_the_experiment_0.png)
 
-1. A copy of your training experiment is created that contains the trained model wrapped between web service input (the web service action you invoke with parameters) and web service output modules (how the result of scoring the parameters are returned).
-2. We will make some adjustments to the web service input and output modules to control the parameters we require and the results we return.
-3. When packaging the Predictive Web Service, Azure ML added two Apply Transformation modules which are not needed. Delete both of the Apply Transformation Modules.
+1. A copy of your training experiment is created that contains the trained model wrapped between **Web service input** (the web service action you invoke with parameters) and **Web service output** modules (how the result of scoring the parameters are returned). To fully control the required inputs of the web service and return values, there are some adjustments that need to be made to the newly created predictive experiment (notice the new tab at the top of the experiement).
 
-    ![Screenshot](images/operationalize_the_experiment_1.png)
-
-1. The **Apply Transformation** modules were added to support the **Clean Missing Data** modules. We will not be using these steps in our flow, so delete both **Clean Missing Data** Modules.
-
-    ![Screenshot](images/operationalize_the_experiment_2.png)
-
-1. Reconnect the **FlightDelaysWithAirportCodes** to the input to **Apply Math Operation** module that is directly beneath it.
-
-    ![Screenshot](images/operationalize_the_experiment_3.png)
-
-1. Reconnect the **FlightWeatherWithAirportCodes** module to the leftmost input port of the **Execute R Script** module beneath it.
-
-    ![Screenshot](images/operationalize_the_experiment_4.png)
-
-1. Now move the **Web service input** down so it is to the right of the **Join Data** module. Connect the output of the **Web service input** to input of the **Edit Metadata** module.
+1. Right click on the line that connects the new **Web service input** module to the **Execute R Script** module and click **Delete**.
+1. Now move the **Web service input** down so it is to the right of the **Join Data** module. Connect the output of the **Web service input** to input of the **Score Model** module.
 
     ![Screenshot](images/operationalize_the_experiment_5.png)
 
-1. Right click the line connecting the **Join Data** module and the **Edit Metadata** module and select **Delete**.
+1. Right click the line connecting the **Join Data** module and the **Score Model** module and select **Delete**.
 
     ![Screenshot](images/operationalize_the_experiment_6.png)
 
-1. In between the **Join Data** and the **Edit Metadata** modules, drop a **Select Columns in Dataset** module and connect **Join Data** to this new **Select Columns in Dataset** module. In the **Properties** panel for the **Select Columns in Dataset** module, set the Select columns to all columns, *exclude* (notice this is an exclude operation) columns **DepDel15**, **OriginLatitude**, **OriginLongitude**, **DestLatitude**, and **DestLongitude**. This configuration will update the web service metadata so that these columns do not appear as required input parameters for the web service.
+1. Between the **Join Data** and the **Score Model** modules, drop a **Select Columns in Dataset** module and connect **Join Data** to this new **Select Columns in Dataset** module. In the **Properties** panel for the **Select Columns in Dataset** module click the **Launch column selector** button. In this dialog, click **ALL COLUMNS** and select **Exclude** (notice this is an exclude operation) from the dropdown box. Then select the columns **DepDel15**, **OriginLatitude**, **OriginLongitude**, **DestLatitude**, and **DestLongitude**. This configuration will update the web service metadata so that these columns do not appear as required input parameters for the web service.
 
-    ![Screenshot](images/operationalize_the_experiment_7.png)
+    ![Screenshot](images/ex01_exclude_columns_for_web_service_input.png)
 
-1. Connect the **Select Columns in Dataset** output to **Edit Metadata**.
+1. Connect the **Select Columns in Dataset** output to **Score Model**.
 
     ![Screenshot](images/operationalize_the_experiment_8.png)
 
-1. Select the **Select Columns in Dataset** module that comes after the **Edit Metadata** module and delete it.
-2. Connect the output of the **Edit Metadata** module directly to the right input of the **Score Model** module.
-
-    ![Screenshot](images/operationalize_the_experiment_9.png)
-
 1. As we removed the latitude and longitude columns from the dataset to remove them as input to the web service, we have to add them back in before we return the result so that the results can be easily visualized on a map.
+
 2. To add these fields back, begin by deleting the line between the **Score Model** and **Web service output**.
 3. Drag the **AirportCodeLocationLookupClean** dataset on to the design surface, positioning it below the Score Model module.
 
@@ -361,29 +339,32 @@ The typical pattern is split the historical data so a portion is shown to the mo
 
     ![Screenshot](images/operationalize_the_experiment_12.png)
 
-1. Add a **Select Columns in Dataset** module beneath the **Join Data** module.  Connect the **Join Data** output to the input of the **Select Columns in Dataset** module.
+1. Add an **Execute R Script** module beneath the **Join Data** module. Connect the **Join Data** output to the leftmost input of the **Execute R Script** module.
 
     ![Screenshot](images/operationalize_the_experiment_13.png)
 
-1. In the **Properties** panel, set the Selected columns to **exclude** (*not include*) the columns: **AIRPORT\_ID** and **DISPLAY\_AIRPORT\_NAME**.
+1. Replace the default script in the **Execute R Script** module with the following and click the checkmark to save it. This script removes columns we don't need and renames others.
 
-    ![Screenshot](images/operationalize_the_experiment_14.png)
+    ``` R
+    ds.theresults <- maml.mapInputPort(1)
 
-    ![Screenshot](images/operationalize_the_experiment_15.png)
+    # remove a couple columns
+    ds.theresults$AIRPORT_ID <- NULL
+    ds.theresults$DISPLAY_AIRPORT_NAME <- NULL
 
-1. Add a **Edit Metadata** module.  Connect the output of the **Select Columns in Dataset** module to the input of the **Edit Metadata** module.
+    # rename a couple columns
+    colnames(ds.theresults)[colnames(ds.theresults) == 'LATITUDE'] <- 'OriginLatitude'
+    colnames(ds.theresults)[colnames(ds.theresults) == 'LONGITUDE'] <- 'OriginLongitude'
 
-    ![Screenshot](images/operationalize_the_experiment_16.png)
+    maml.mapOutputPort("ds.theresults");
+    ```
 
-1. In the **Properties** panel for the **Edit Metadata** module, set the Selected columns to **LATITUDE** and **LONGITUDE**. In the New column names enter: **OriginLatitude** , **OriginLongitude**.
 
-    ![Screenshot](images/operationalize_the_experiment_17.png)
-
-1. Connect the output of the **Edit Metadata** module to the input of the **Web service output** module.
+1. Connect the leftmost output of the **Execute R Script** module to the input of the **Web service output** module.
 
     ![Screenshot](images/operationalize_the_experiment_18.png)
 
-1. Run the experiment. This should take 5-7 minutes.
+1. Run the experiment. This may take a few minutes. Your experiment is now ready to be deployed as a web service!
 
 ## Task 9: Deploy Web Service and Note API Information
 
