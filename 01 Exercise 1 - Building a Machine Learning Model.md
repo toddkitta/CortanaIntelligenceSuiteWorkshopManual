@@ -14,7 +14,7 @@ This exercise has 9 tasks:
 * [Task 6: Join the Flight and Weather Datasets](#task-6-join-the-flight-and-weather-datasets)
 * [Task 7: Train the Model](#task-7-train-the-model)
 * [Task 8: Operationalize the Experiment](#task-8-operationalize-the-experiment)
-* [Task 9: Note Web Service Integration Information](#task-9-deploy-web-service-and-note-api-information)
+* [Task 9: Deploy Web Service and Note API Information](#task-9-deploy-web-service-and-note-api-information)
 
 ## Task 1: Connect to the Lab VM
 
@@ -368,8 +368,10 @@ The typical pattern is split the historical data so a portion is shown to the mo
 
 ## Task 9: Deploy Web Service and Note API Information
 
-1. When the experiment is finished running, click **Deploy Web Service [New]**. This will launch the web service deployment wizard.
+1. When the experiment is finished running, click **Deploy Web Service [New]** (not **[Classic]**). This will launch the web service deployment wizard.
+
 1. You can leave the default name, select **Create new...** for **Price Plan** and then provide a **Plan Name** value. Finally, under **Monthly Plan Options** select **Standard DevTest**.
+    1. **NOTE:**: If you have already created a DevTest plan, you will not be able to create another one. You can simply select the DevTest plan that was already created from the **Price Plan** dropdown box.
 
     ![Screenshot](images/operationalize_the_experiment_19.png)
 
