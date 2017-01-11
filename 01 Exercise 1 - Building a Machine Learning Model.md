@@ -100,7 +100,6 @@ This exercise has 9 tasks:
     1. Remove rows with missing **DepDel15** values.
     1. Create a new column that represents the departure hour. This will be based on the **CRSDepTime** column.
     1. Trim down the list of columns needed to do the analysis at hand.
-    1. Change the data types of a few columns. Specifically, a few of the columns in this dataset need to be represented as **Categorical** to Azure ML.
 
 12. In order to perform the aforementioned data manipulation tasks, you could use built-in Azure ML modules for each task or you could use a script (such as R or Python). Here, you will use R. To do this, add an **Execute R Script** (recall you can search for modules on the left) module beneath the flights dataset and connect the output of the dataset to the first input port (leftmost) of the **Execute R Script**.
 
@@ -123,12 +122,6 @@ This exercise has 9 tasks:
 
     # Trim the columns to only those we will use for the predictive model
     ds.flights = ds.flights[, c("OriginAirportCode", "Month", "DayofMonth", "CRSDepHour", "DayOfWeek", "Carrier", "DestAirportCode", "DepDel15")]
-
-    # cast some of the data types to factor (categorical)
-    ds.flights$DayOfWeek <- as.factor(ds.flights$DayOfWeek)
-    ds.flights$Carrier <- as.factor(ds.flights$Carrier)
-    ds.flights$DestAirportCode <- as.factor(ds.flights$DestAirportCode)
-    ds.flights$OriginAirportCode <- as.factor(ds.flights$OriginAirportCode)
 
     maml.mapOutputPort("ds.flights");
     ```
@@ -246,6 +239,21 @@ This exercise has 9 tasks:
 
     ![Screenshot](images/join_the_flight_and_weather_datasets_3.png)
 
+1. There is one more data manipulation task that needs to be done and once again we will use an R script. Add an **Execute R Script** module below **Join Data** and connect the **Join Data** output to the leftmost input of the **Execute R Script** module.
+1. Replace the default script of the **Execute R Script** module with the following and click the checkmark to save it. This script simply changes the data type of some of the columns so that they are represented as **Categorical** to Azure ML.
+
+    ``` R
+    ds.flights <- maml.mapInputPort(1)
+
+    # cast some of the data types to factor (categorical)
+    ds.flights$DayOfWeek <- as.factor(ds.flights$DayOfWeek)
+    ds.flights$Carrier <- as.factor(ds.flights$Carrier)
+    ds.flights$DestAirportCode <- as.factor(ds.flights$DestAirportCode)
+    ds.flights$OriginAirportCode <- as.factor(ds.flights$OriginAirportCode)
+
+    maml.mapOutputPort("ds.flights");
+    ```
+
 1. Run the experiment to update the metadata.
 1. Save your experiment.
 
@@ -255,7 +263,7 @@ AdventureWorks Travel wants to build a model to predict if a departing flight wi
 
 The typical pattern is split the historical data so a portion is shown to the model for training purposes, and another portion is reserved to test just how well the trained model performs against examples it has not seen before.
 
-1. Drag a **Split Data** module beneath **Join Data** and connect them.
+1. Drag a **Split Data** module beneath **Execute R Script** and connect them.
 
     ![Screenshot](images/train_the_model_0.png)
 
@@ -280,7 +288,7 @@ The typical pattern is split the historical data so a portion is shown to the mo
     ![Screenshot](images/train_the_model_5.png)
 
 1. Run the experiment.
-2. When the experiment is finished running (which may take a minute or two), right click on the output port of the Score Model module and select **Visualize** to see the results of its predictions. You should have a total of 13 columns.
+2. When the experiment is finished running (which may take a minute or two), right click on the output port of the **Score Model** module and select **Visualize** to see the results of its predictions. You should have a total of 13 columns.
 
     ![Screenshot](images/train_the_model_6.png)
 
@@ -308,23 +316,28 @@ The typical pattern is split the historical data so a portion is shown to the mo
 1. A copy of your training experiment is created that contains the trained model wrapped between **Web service input** (the web service action you invoke with parameters) and **Web service output** modules (how the result of scoring the parameters are returned). To fully control the required inputs of the web service and return values, there are some adjustments that need to be made to the newly created predictive experiment (notice the new tab at the top of the experiement).
 
 1. Right click on the line that connects the new **Web service input** module to the **Execute R Script** module and click **Delete**.
-1. Now move the **Web service input** down so it is to the right of the **Join Data** module. Connect the output of the **Web service input** to input of the **Score Model** module.
 
-    ![Screenshot](images/operationalize_the_experiment_5.png)
+1. Now move the **Web service input** down so it is to the right of the **Join Data** module.
 
-1. Right click the line connecting the **Join Data** module and the **Score Model** module and select **Delete**.
+1. Right click the line connecting the **Join Data** module and the **Execute R Script** module and select **Delete**. Move the **Execute R Script** module down a little to give yourself a little more room.
 
     ![Screenshot](images/operationalize_the_experiment_6.png)
 
-1. Between the **Join Data** and the **Score Model** modules, drop a **Select Columns in Dataset** module and connect **Join Data** to this new **Select Columns in Dataset** module. In the **Properties** panel for the **Select Columns in Dataset** module click the **Launch column selector** button. In this dialog, click **ALL COLUMNS** and select **Exclude** (notice this is an exclude operation) from the dropdown box. Then select the columns **DepDel15**, **OriginLatitude**, **OriginLongitude**, **DestLatitude**, and **DestLongitude**. This configuration will update the web service metadata so that these columns do not appear as required input parameters for the web service.
+1. Between the **Join Data** and **Execute R Script** modules, drop a **Select Columns in Dataset** module and connect **Join Data** to this new **Select Columns in Dataset** module.
+
+1. In the **Properties** panel for the **Select Columns in Dataset** module click the **Launch column selector** button. In this dialog, click **ALL COLUMNS** and select **Exclude** (notice this is an exclude operation) from the dropdown box. Then select **DepDel15** in the textbox. This configuration will update the web service metadata so that this column does not appear as a required input parameter for the web service.
 
     ![Screenshot](images/ex01_exclude_columns_for_web_service_input.png)
 
-1. Connect the **Select Columns in Dataset** output to **Score Model**.
+1. Connect the **Select Columns in Dataset** output to the leftmost input of the **Execute R Script** module.
 
     ![Screenshot](images/operationalize_the_experiment_8.png)
 
-1. As we removed the latitude and longitude columns from the dataset to remove them as input to the web service, we have to add them back in before we return the result so that the results can be easily visualized on a map.
+1. Connect the output of the **Web service input** to leftmost input of the **Execute R Script** module that is right below **Select Columns in Dataset**.
+
+    ![Screenshot](images/operationalize_the_experiment_5.png)
+
+1. Because we have removed the latitude and longitude columns from the dataset (so they were not required as an input to the web service), we have to add them back in before we return the result so that the results can be easily visualized on a map.
 
 2. To add these fields back, begin by deleting the line between the **Score Model** and **Web service output**.
 3. Drag the **AirportCodeLocationLookupClean** dataset on to the design surface, positioning it below the Score Model module.
@@ -368,7 +381,7 @@ The typical pattern is split the historical data so a portion is shown to the mo
 
 ## Task 9: Deploy Web Service and Note API Information
 
-1. When the experiment is finished running, click **Deploy Web Service [New]** (not **[Classic]**). This will launch the web service deployment wizard.
+1. When the experiment is finished running, click **Deploy Web Service [New]** (*not* **[Classic]**). This will launch the web service deployment wizard.
 
 1. You can leave the default name, select **Create new...** for **Price Plan** and then provide a **Plan Name** value. Finally, under **Monthly Plan Options** select **Standard DevTest**.
     1. **NOTE:**: If you have already created a DevTest plan, you will not be able to create another one. You can simply select the DevTest plan that was already created from the **Price Plan** dropdown box.
