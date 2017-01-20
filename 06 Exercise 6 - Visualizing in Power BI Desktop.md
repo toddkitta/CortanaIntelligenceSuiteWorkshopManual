@@ -7,9 +7,8 @@ Synopsis: In this exercise, attendees will construct a report in Power BI Deskto
 This exercise has 4 tasks:
 
 * [Task 1: Connect to the Lab VM](#task-1-connect-to-the-lab-vm)
-* [Task 2: Install Spark ODBC Driver](#task-2-install-spark-odbc-driver)
-* [Task 3: Connect to the HDInsight Spark Using Power BI Desktop](#task-3-connect-to-the-hdinsight-spark-using-power-bi-desktop)
-* [Task 4: Create Power BI Report](#task-4-create-power-bi-report)
+* [Task 2: Connect to the HDInsight Spark Using Power BI Desktop](#task-2-connect-to-the-hdinsight-spark-using-power-bi-desktop)
+* [Task 3: Create Power BI Report](#task-3-create-power-bi-report)
 
 ## Task 1: Connect to the Lab VM
 
@@ -29,25 +28,7 @@ This exercise has 4 tasks:
    - User name: **cortana**
    - Password: **Password.1!!**
 
-## Task 2: Install Spark ODBC Driver
-
-1. Go to [https://aka.ms/sparkdriver](https://aka.ms/sparkdriver).
-2. Scroll down and click on **Download** button.
-3. Check the box for **SparkODBC64.msi** and click on **Next** button to begin the download.
-4. Once downloaded, launch the installer.
-5. Click on **Next** button.
-
-    ![Screenshot](images/install_spark_odbc_driver_0.png)
-
-1. Check the box to accept the terms and click the **Next** button.
-2. Click on the **Next** button again.
-
-    ![Screenshot](images/install_spark_odbc_driver_1.png)
-
-1. Click on the **Install** button.
-2. Click on **Finish** button to close the window.
-
-## Task 3: Connect to the HDInsight Spark Using Power BI Desktop
+## Task 2: Connect to the HDInsight Spark Using Power BI Desktop
 
 1. Launch Power BI Desktop using the shortcut on the Desktop of the Lab VM.
 2. Click on **Get Data** from the left side of the welcome window.
@@ -73,7 +54,7 @@ This exercise has 4 tasks:
 1. Select **flightdelaysummary** by checking box next to it.
 2. Click on the **Load** button from the bottom right corner of the window. It will take couple of minutes to load the data into the Power BI Desktop client.
 
-## Task 4: Create Power BI Report
+## Task 3: Create Power BI Report
 
 1. Once the data load is completed, you will find the **flightdelaysummary** to the right side of the screen under the **Fields** area.
 
