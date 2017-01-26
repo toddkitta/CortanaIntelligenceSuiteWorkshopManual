@@ -7,12 +7,14 @@ Synopsis: In this exercise, attendees will create a baseline environment for Azu
 This exercise has 4 tasks:
 
 * [Task 1: Connect to the Lab VM](#task-1-connect-to-the-lab-vm)
-* [Task 2: Install and Configure Data Management Gateway on the Lab VM](#task-2-install-and-configure-data-management-gateway-on-the-lab-vm)
-* [Task 3: Log in to the Azure Portal](#task-3-log-in-to-the-azure-portal)
-* [Task 4: Create new Azure Data Factory Service](#task-4-create-new-azure-data-factory-service)
+* [Task 2: Download and Stage Data to be Processed](#task-2-download-and-stage-data-to-be-processed)
+* [Task 3: Install and Configure Data Management Gateway on the Lab VM](#task-3-install-and-configure-data-management-gateway-on-the-lab-vm)
+* [Task 4: Log in to the Azure Portal](#task-4-log-in-to-the-azure-portal)
+* [Task 5: Create new Azure Data Factory Service](#task-5-create-new-azure-data-factory-service)
 
 ## Task 1: Connect to the Lab VM
 
+1. **NOTE:** If you are already connected to your Lab VM, skip to [Task 2](#task-2-download-and-stage-data-to-be-processed).
 1. From the left side of the Azure portal, click on **All resources**.
 2. In the **Filter items...** box, type in **lab**.
 3. Select your lab VM. Keep in mind the name of the virtual machine will begin with the "app name" you provided when setting up this workshop environment (in the prerequisite deployment).
@@ -29,10 +31,13 @@ This exercise has 4 tasks:
    - User name: **cortana**
    - Password: **Password.1!!**
 
-## Task 2: Install and Configure Data Management Gateway on the Lab VM
+## Task 2: Download and Stage Data to be Processed
 
 1. Once you have logged in to the Lab VM, open a web browser. A shortcut for Chrome is on the Desktop and Internet Explorer can be accessed from the Start Screen.
 2. Download the AdventureWorks sample CSV file. You can download it from [http://aka.ms/flightsandweather](http://aka.ms/flightsandweather) and save it to a new folder called **C:\Data**.
+
+## Task 3: Install and Configure Data Management Gateway on the Lab VM
+
 3. To download the latest version of Microsoft Data Management Gateway, go to [https://aka.ms/dmgdownload](https://aka.ms/dmgdownload).
 4. Click on the **Download** button from the middle of the webpage.
 5. Select the 64-bit version and click **Next**.
@@ -52,12 +57,12 @@ This exercise has 4 tasks:
 
     ![Screenshot](images/ex02_install_and_configure_data_management_gateway_on_the_lab_vm_2.png)
 
-## Task 3: Log in to the Azure Portal
+## Task 4: Log in to the Azure Portal
 
 1. Launch a new browser session and navigate to [https://portal.azure.com](https://portal.azure.com). Once prompted, log in with your Microsoft Azure credentials. If prompted, choose whether your account is an organization account or a Microsoft Account.  This will be based on which account was used to provision your Azure subscription that are using for these labs.
    - **Note** : You may need to launch an InPrivate/Incognito session in your browser if you have multiple Microsoft Accounts.
 
-## Task 4: Create new Azure Data Factory Service
+## Task 5: Create new Azure Data Factory Service
 
 1. From left top corner of the Azure Portal, click on **+New**.
 
