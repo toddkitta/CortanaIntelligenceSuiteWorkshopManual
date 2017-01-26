@@ -12,6 +12,7 @@ This exercise has 4 tasks:
 
 ## Task 1: Connect to the Lab VM
 
+1. **NOTE:** If you are already connected to your Lab VM, skip to [Task 2](task-2-connect-to-the-hdinsight-spark-using-power-bi-desktop).
 1. From the left side of the Azure portal, click on **All resources**.
 2. In the **Filter items...** box, type in **lab**.
 3. Select your lab VM. Keep in mind the name of the virtual machine will begin with the "app name" you provided when setting up this workshop environment (in the prerequisite deployment).
