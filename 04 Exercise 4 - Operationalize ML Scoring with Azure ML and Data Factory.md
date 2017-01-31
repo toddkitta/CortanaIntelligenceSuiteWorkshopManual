@@ -12,6 +12,10 @@ This exercise has 5 tasks:
 * [Task 4: Create Azure ML Predictive Pipeline](#task-4-create-azure-ml-predictive-pipeline)
 * [Task 5: Monitor Your Pipeline Activities](#task-5-monitor-your-pipeline-activities)
 
+## Get out of Jail Free
+
+If, for whatever reason, you cannot complete this lab whether due to time contraints or if you are not able to troubleshoot an issue, we have created a "get out of jail free" exercise. If you wish to use this exercise at any time, please proceed to the [Appendix B](10 Appendix B - Alternative to Data Factory Exercises.md). Please note that using this exercise will let you surpass all of the Azure Data Factory exercises. After completing Appendix B, you can continue to [Exercise 5](05 Exercise 5 - Summarize Data Using HDInsight Spark.md).
+
 ## Task 1: Create Azure ML Linked Service
 
 1. Go back to the **Azure Data Factory** service blade.
@@ -63,7 +67,7 @@ This exercise has 5 tasks:
             "linkedServiceName": "OutputLinkedService-AzureBlobStorage",
             "typeProperties": {
                 "fileName": "FlightsAndWeather.csv",
-                "folderPath": "sparkcontainer/flights",
+                "folderPath": "sparkcontainer",
                 "format": {
                     "type": "TextFormat"
                 }
@@ -96,7 +100,7 @@ This exercise has 5 tasks:
             "linkedServiceName": "OutputLinkedService-AzureBlobStorage",
             "typeProperties": {
                 "fileName": "Scored_FlightsAndWeather.csv",
-                "folderPath": "sparkcontainer/flights",
+                "folderPath": "sparkcontainer",
                 "format": {
                     "type": "TextFormat"
                 }

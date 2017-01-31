@@ -33,7 +33,7 @@ Synopsis: In this exercise, attendees will prepare a summary of flight delay dat
     ```scala
     import sqlContext.implicits._
 
-    val flightDelayTextLines = sc.textFile("wasb:///flights/Scored_FlightsAndWeather.csv")
+    val flightDelayTextLines = sc.textFile("wasb:///Scored_FlightsAndWeather.csv")
 
     case class AirportFlightDelays(OriginAirportCode:String,OriginLatLong:String,Month:Integer,Day:Integer,Hour:Integer,Carrier:String,DelayPredicted:Integer,DelayProbability:Double)
 

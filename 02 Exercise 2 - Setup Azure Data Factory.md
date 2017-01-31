@@ -12,6 +12,10 @@ This exercise has 4 tasks:
 * [Task 4: Log in to the Azure Portal](#task-4-log-in-to-the-azure-portal)
 * [Task 5: Create new Azure Data Factory Service](#task-5-create-new-azure-data-factory-service)
 
+## Get out of Jail Free
+
+If, for whatever reason, you cannot complete this lab whether due to time contraints or if you are not able to troubleshoot an issue, we have created a "get out of jail free" exercise. If you wish to use this exercise at any time, please proceed to the [Appendix B](10 Appendix B - Alternative to Data Factory Exercises.md). Please note that using this exercise will let you surpass all of the Azure Data Factory exercises. After completing Appendix B, you can continue to [Exercise 5](05 Exercise 5 - Summarize Data Using HDInsight Spark.md).
+
 ## Task 1: Connect to the Lab VM
 
 1. **NOTE:** If you are already connected to your Lab VM, skip to [Task 2](#task-2-download-and-stage-data-to-be-processed).
