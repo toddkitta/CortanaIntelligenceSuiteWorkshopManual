@@ -43,16 +43,14 @@ This exercise has 4 tasks:
 1. Click **Continue** on the bottom right corner of the new window.
 2. Type or copy/paste the **URL** of your Azure HDInsight Spark cluster, which can be found from the address bar when connected to the Azure HDInsight Spark cluster in previous Exercise 5. It should look something like this example: [**https://jcholab199spark.azurehdinsight.net**](https://jcholab199spark.azurehdinsight.net).
 3. Click the **OK** button.
-4. When prompted, enter the cluster user name and password.
+4. When prompted, enter the cluster user name and password and then click **Connect**.
    - User name: **cortana**
    - Password: **Password.1!!**
 
-1. Give the system a few moments to connect to Spark and load the metadata.
-2. When the dialog box disappears, look for the **flightdelaysummary** from the list.
+2. When the dialog box disappears, look for the **flightdelaysummary** in the list and check the box next to it.
 
     ![Screenshot](images/connect_to_the_hdinsight_spark_using_power_bi_desktop_3.png)
 
-1. Select **flightdelaysummary** by checking box next to it.
 2. Click on the **Load** button from the bottom right corner of the window. It will take couple of minutes to load the data into the Power BI Desktop client.
 
 ## Task 3: Create Power BI Report
