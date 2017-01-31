@@ -6,7 +6,7 @@ Synopsis: In this exercise, attendees will prepare a summary of flight delay dat
 
 ## Task 1: Summarize Delays by Airport
 
-1. Navigate to the blade for your Spark Cluster in the Azure Portal.
+1. Navigate to the blade for your Spark cluster in the Azure Portal. An easy way to find your Spark cluster is to navigate to the resource group you created during the workshop setup using the Resource Group item on the leftmost navigation area in the portal. Once you select your resource group you will see all of the resources that were created for the workshop (including the Spark cluster).
 1. In the Quick Links section, click **Cluster Dashboards**.
 
     ![Screenshot](images/summarize_delays_by_airport_1.png)
@@ -52,13 +52,13 @@ Synopsis: In this exercise, attendees will prepare a summary of flight delay dat
     resultDataFrame.write.mode("overwrite").saveAsTable("FlightDelays")
     ```
 
-1. Click the **Play** icon in the top of the screen to execute this code and create the FlightDelays table. You will know a command is executing by the asterisk to the left of the box. Once the command has completed, the asterisk will be replaced with a number.
+1. Click the **Play** icon at the top of the screen to execute this code and create the FlightDelays table. You will know a command is executing by the asterisk to the left of the box. Once the command has completed, the asterisk will be replaced with a number.
 
     ![Screenshot](images/summarize_delays_by_airport_5.png)
 
     ![Screenshot](images/summarize_delays_by_airport_running_command.png)
 
-1. Once the previous command has completed, click in the empty paragraph below the paragraph in which you entered your Scala script. In this paragraph, you are going to author a SQL query to view the results of the table you just created. In order to switch from running Scala code, to running SQL, your first line in the paragraph must start with %%.
+1. Once the previous command has completed, click in the empty paragraph below the paragraph in which you entered your Scala script. In this paragraph, you are going to author a SQL query to view the results of the table you just created. In order to switch from running Scala code, to running SQL, your first line in the paragraph must start with %%. As before, click the **Play** icon at the top of the screen to run the command.
 
     ```scala
     %%sql
@@ -90,7 +90,7 @@ Synopsis: In this exercise, attendees will prepare a summary of flight delay dat
 
     ![Screenshot](images/summarize_delays_by_airport_8.png)
 
-1. Since the summary data looks good, the final step is save this summary calculation as a table that we can later query using Power BI.
+1. Since the summary data looks good, the final step is save this summary calculation as a table that we can later query using Power BI in the next exercise.
 2. To accomplish creating the table, enter a new paragraph and add the following Scala code and run it.
 
     ```scala
