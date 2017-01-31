@@ -7,9 +7,6 @@ Synopsis: In this exercise, attendees will prepare a summary of flight delay dat
 ## Task 1: Summarize Delays by Airport
 
 1. Navigate to the blade for your Spark Cluster in the Azure Portal.
-
-    ![Screenshot](images/summarize_delays_by_airport_0.png)
-
 1. In the Quick Links section, click **Cluster Dashboards**.
 
     ![Screenshot](images/summarize_delays_by_airport_1.png)
@@ -31,6 +28,8 @@ Synopsis: In this exercise, attendees will prepare a summary of flight delay dat
     ![Screenshot](images/summarize_delays_by_airport_4.png)
 
     ```scala
+    import sqlContext.implicits._
+
     val flightDelayTextLines = sc.textFile("wasb:///Scored_FlightsAndWeather.csv")
 
     case class AirportFlightDelays(OriginAirportCode:String,OriginLatLong:String,Month:Integer,Day:Integer,Hour:Integer,Carrier:String,DelayPredicted:Integer,DelayProbability:Double)
@@ -53,11 +52,13 @@ Synopsis: In this exercise, attendees will prepare a summary of flight delay dat
     resultDataFrame.write.mode("overwrite").saveAsTable("FlightDelays")
     ```
 
-1. Click the **Play** icon in the top of the screen to execute this code and create the FlightDelays table.
+1. Click the **Play** icon in the top of the screen to execute this code and create the FlightDelays table. You will know a command is executing by the asterisk to the left of the box. Once the command has completed, the asterisk will be replaced with a number.
 
     ![Screenshot](images/summarize_delays_by_airport_5.png)
 
-1. Click in the empty paragraph below the paragraph in which you entered your Scala script. In this paragraph, you are going to author a SQL query to view the results of the table you just created. In order to switch from running Scala code, to running SQL, your first line in the paragraph must start with %.
+    ![Screenshot](images/summarize_delays_by_airport_running_command.png)
+
+1. Once the previous command has completed, click in the empty paragraph below the paragraph in which you entered your Scala script. In this paragraph, you are going to author a SQL query to view the results of the table you just created. In order to switch from running Scala code, to running SQL, your first line in the paragraph must start with %%.
 
     ```scala
     %%sql
@@ -93,10 +94,8 @@ Synopsis: In this exercise, attendees will prepare a summary of flight delay dat
 2. To accomplish creating the table, enter a new paragraph and add the following Scala code and run it.
 
     ```scala
-    sqlContext.sql("DROP TABLE IF EXISTS FlightDelaysSummary");
-
     val summary = sqlContext.sql("SELECT  OriginAirportCode, OriginLatLong, Month, Day, Hour, Sum(DelayPredicted) NumDelays, Avg(DelayProbability) AvgDelayProbability FROM FlightDelays WHERE Month = 4 GROUP BY OriginAirportCode, OriginLatLong, Month, Day, Hour Having Sum(DelayPredicted) > 1")
-    summary.saveAsTable("FlightDelaysSummary")
+    summary.write.mode("overwrite").saveAsTable("FlightDelaysSummary")
     ```
 
 1. Click the **Play** icon in the top of the screen to execute this code.
