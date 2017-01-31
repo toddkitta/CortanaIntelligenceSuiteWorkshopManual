@@ -116,14 +116,6 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
 
     ![Screenshot](images/ex02_create_new_azure_data_factory_service_7.png)
 
-1. Confirmed that gateway is connected by going to the system tray of the bottom right corner and double click on the follow icon.
-
-    ![Screenshot](images/ex02_create_new_azure_data_factory_service_8.png)
-
-1. You should see following screen:
-
-    ![Screenshot](images/ex02_create_new_azure_data_factory_service_9.png)
-
 1. You can go back to the Azure Data Factory browser page within the Azure Portal, and Click **OK** twice to finish setting up the Data gateway.
 
     ![Screenshot](images/ex02_create_new_azure_data_factory_service_10.png)
