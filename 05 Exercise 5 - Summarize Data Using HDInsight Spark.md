@@ -31,8 +31,6 @@ Synopsis: In this exercise, attendees will prepare a summary of flight delay dat
     ![Screenshot](images/summarize_delays_by_airport_4.png)
 
     ```scala
-    import sqlContext.implicits._
-
     val flightDelayTextLines = sc.textFile("wasb:///Scored_FlightsAndWeather.csv")
 
     case class AirportFlightDelays(OriginAirportCode:String,OriginLatLong:String,Month:Integer,Day:Integer,Hour:Integer,Carrier:String,DelayPredicted:Integer,DelayProbability:Double)
