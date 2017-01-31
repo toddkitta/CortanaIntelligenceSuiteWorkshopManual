@@ -33,8 +33,6 @@ Synopsis: In this exercise, attendees will prepare a summary of flight delay dat
     ```scala
     import sqlContext.implicits._
 
-    sqlContext.sql("DROP TABLE IF EXISTS FlightDelays");
-
     val flightDelayTextLines = sc.textFile("wasb:///flights/Scored_FlightsAndWeather.csv")
 
     case class AirportFlightDelays(OriginAirportCode:String,OriginLatLong:String,Month:Integer,Day:Integer,Hour:Integer,Carrier:String,DelayPredicted:Integer,DelayProbability:Double)
@@ -54,7 +52,7 @@ Synopsis: In this exercise, attendees will prepare a summary of flight delay dat
             )
     ).toDF()
 
-    resultDataFrame.saveAsTable("FlightDelays")
+    resultDataFrame.write.mode("overwrite").saveAsTable("FlightDelays")
     ```
 
 1. Click the **Play** icon in the top of the screen to execute this code and create the FlightDelays table.
