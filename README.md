@@ -43,4 +43,4 @@ The workshop uses several, but not nearly all, of the components that are part o
 - [Exercise 7 - Deploy Intelligent Web App](07 Exercise 7 - Deploy Intelligent Web App.md)
 - [Exercise 8 - Cleanup of Azure Resources](08 Exercise 8 - Cleanup of Azure Resources.md)
 - [Appendix A - Alternative to Azure ML Exercise](09 Appendix A - Alternative to Azure ML Exercise.md)
-- [Appendix B - Alternative to Azure ML Exercise](10 Appendix B - Alternative to Data Factory Exercises)
+- [Appendix B - Alternative to Azure Data Factory Exercises](10 Appendix B - Alternative to Data Factory Exercises.md)
