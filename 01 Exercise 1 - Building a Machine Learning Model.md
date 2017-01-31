@@ -41,7 +41,9 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
 ## Task 2: Navigate to Machine Learning Studio
 
 1. In a browser, go to [https://studio.azureml.net](https://studio.azureml.net) and log in using the same account you used in the Azure portal to deploy the prerequisites for this workshop.
-2. Once you are signed in, ensure the workspace that was created as part of the prerequisites is selected from the top bar.
+2. Once you are signed in, ensure the workspace that was created as part of the prerequisites is selected from the top bar. **Make sure** you select the correct workspace; if you do not you might run into issues in subsequent steps.
+
+    ![Screenshot](images/choose_ml_workspace.png)
 
 ## Task 3: Upload the Sample Datasets
 
