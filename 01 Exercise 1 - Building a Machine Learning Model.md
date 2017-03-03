@@ -52,7 +52,7 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
    - **Note:** You will need to unblock the zip file before extracting its files. Do this by right clicking on it, selecting **Properties**, and then unblocking the file in the resulting dialog.
 3. Extract the ZIP and verify you have the following files:
    - FlightDelaysWithAirportCodes.csv
-   - FlightWeatherWithAirportCodes.csv
+   - FlightWeatherWithAirportCode.csv
    - AirportCodeLocationClean.csv
 4. Click **+ NEW** at the bottom, point to **Dataset** , and select **From Local File**.
 
@@ -64,7 +64,7 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
 
     ![Screenshot](images/upload_the_sample_datasets_1.png)
 
-8. Repeat the previous step for the **FlightWeatherWithAirportCodes.csv** and **AirportCodeLocationLookupClean.csv** setting the name for the dataset in a similar fashion.
+8. Repeat the previous step for the **FlightWeatherWithAirportCode.csv** and **AirportCodeLocationLookupClean.csv** setting the name for the dataset in a similar fashion.
 
 ## Task 4: Start a New Experiment
 
@@ -142,11 +142,11 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
 
 ## Task 5: Prepare the Weather Data
 
-1. To the right of the **FlightDelaysWithAirportCodes** dataset, add the **FlightWeatherWithAirportCodes** dataset.
+1. To the right of the **FlightDelaysWithAirportCodes** dataset, add the **FlightWeatherWithAirportCode** dataset.
 
     ![Screenshot](images/prepare_the_weather_data_0.png)
 
-2. Right click the output port of the **FlightWeatherWithAirportCodes** dataset and select **Visualize**.
+2. Right click the output port of the **FlightWeatherWithAirportCode** dataset and select **Visualize**.
 
     ![Screenshot](images/prepare_the_weather_data_1.png)
 
