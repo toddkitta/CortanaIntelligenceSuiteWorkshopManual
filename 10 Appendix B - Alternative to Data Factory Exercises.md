@@ -6,7 +6,7 @@ Synopsis: The purpose of this exercise is to provide a "get out of jail free" ca
 
 ## Task 1: Download the Pre-Scored File
 
-1. Go to [https://aka.ms/scoredfile](https://aka.ms/scoredfile). This will download a copy of the file that Azure Data Factory would have created in [Exercise 4](04 Exercise 4 - Operationalize ML Scoring with Azure ML and Data Factory.md).
+1. Go to [https://aka.ms/scoredfile](https://aka.ms/scoredfile). This will download a copy of the file that Azure Data Factory would have created in [Exercise 4](04 Exercise 4 - Operationalize ML Scoring with Azure ML and Data Factory.md).  You need to rename the file to .csv before upload.
 2. Once the file is downloaded, go to the [Azure Portal](http://portal.azure.com) and find the storage account that is the underlying storage for the Spark cluster; it will be called **XXXsparkstorage** (where **XXX** is the App Name you provided when you deployed the workshop prerequisites). An easy way to find your storage account is to navigate to the resource group you created during the workshop setup using the Resource Group item on the leftmost navigation area in the portal. Once you select your resource group you will see all of the resources that were created for the workshop (including the storage account).
 3. Once here, select **Blobs** from the storage account blade (while making sure **Overview** is selected in the storage account navigation area).
 ![Screenshot](images/appendix_b_select_blob.png)
