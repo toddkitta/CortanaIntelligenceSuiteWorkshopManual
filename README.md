@@ -34,13 +34,13 @@ The workshop uses several, but not nearly all, of the components that are part o
 
 # Exercises
 
-- [Exercise 1 - Building a Machine Learning Model](01 Exercise 1 - Building a Machine Learning Model.md)
-- [Exercise 2 - Setup Azure Data Factory](02 Exercise 2 - Setup Azure Data Factory.md)
-- [Exercise 3 - Develop Data Factory Pipeline for Data Movement](03 Exercise 3 - Develop Data Factory Pipeline for Data Movement.md)
-- [Exercise 4 - Operationalize ML Scoring with Azure ML and Data Factory](04 Exercise 4 - Operationalize ML Scoring with Azure ML and Data Factory.md)
-- [Exercise 5 - Summarize Data Using HDInsight Spark](05 Exercise 5 - Summarize Data Using HDInsight Spark.md)
-- [Exercise 6 - Visualizing in Power BI Desktop](06 Exercise 6 - Visualizing in Power BI Desktop.md)
-- [Exercise 7 - Deploy Intelligent Web App](07 Exercise 7 - Deploy Intelligent Web App.md)
-- [Exercise 8 - Cleanup of Azure Resources](08 Exercise 8 - Cleanup of Azure Resources.md)
-- [Appendix A - Alternative to Azure ML Exercise](09 Appendix A - Alternative to Azure ML Exercise.md)
-- [Appendix B - Alternative to Azure Data Factory Exercises](10 Appendix B - Alternative to Data Factory Exercises.md)
+- [Exercise 1 - Building a Machine Learning Model](01_Exercise_1_-_Building_a_Machine_Learning_Model.md)
+- [Exercise 2 - Setup Azure Data Factory](02_Exercise_2_-_Setup_Azure_Data_Factory.md)
+- [Exercise 3 - Develop Data Factory Pipeline for Data Movement](03_Exercise_3_-_Develop_Data_Factory_Pipeline_for_Data_Movement.md)
+- [Exercise 4 - Operationalize ML Scoring with Azure ML and Data Factory](04_Exercise_4_-_Operationalize_ML_Scoring_with_Azure_ML_and_Data_Factory.md)
+- [Exercise 5 - Summarize Data Using HDInsight Spark](05_Exercise_5_-_Summarize_Data_Using_HDInsight_Spark.md)
+- [Exercise 6 - Visualizing in Power BI Desktop](06_Exercise_6_-_Visualizing_in_Power_BI_Desktop.md)
+- [Exercise 7 - Deploy Intelligent Web App](07_Exercise_7_-_Deploy_Intelligent_Web_App.md)
+- [Exercise 8 - Cleanup of Azure Resources](08_Exercise_8_-_Cleanup_of_Azure_Resources.md)
+- [Appendix A - Alternative to Azure ML Exercise](09_Appendix_A_-_Alternative_to_Azure_ML_Exercise.md)
+- [Appendix B - Alternative to Azure Data Factory Exercises](10_Appendix_B_-_Alternative_to_Data_Factory_Exercises.md)
