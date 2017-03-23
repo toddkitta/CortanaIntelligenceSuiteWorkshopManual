@@ -18,7 +18,7 @@ This exercise has 9 tasks:
 
 ## Get out of Jail Free
 
-If, for whatever reason, you cannot complete this lab whether due to time contraints or if you are not able to troubleshoot an issue, we have created a "get out of jail free" exercise. If you wish to use this exercise at any time, please proceed to [Appendix A](09 Appendix A - Alternative to Azure ML Exercise.md). After completing Appendix A, you can continue to [Exercise 2](02 Exercise 2 - Setup Azure Data Factory.md).
+If, for whatever reason, you cannot complete this lab whether due to time contraints or if you are not able to troubleshoot an issue, we have created a "get out of jail free" exercise. If you wish to use this exercise at any time, please proceed to [Appendix A](09_Appendix_A_-_Alternative_to_Azure_ML_Exercise.md). After completing Appendix A, you can continue to [Exercise 2](02_Exercise_2_-_Setup_Azure_Data_Factory.md).
 
 ## Task 1: Connect to the Lab VM
 
@@ -408,4 +408,4 @@ The typical pattern is split the historical data so a portion is shown to the mo
 
     ![Screenshot](images/operationalize_the_experiment_21.png)
 
-Next Exercise: [Exercise 2 - Setup Azure Data Factory](02 Exercise 2 - Setup Azure Data Factory.md)
+Next Exercise: [Exercise 2 - Setup Azure Data Factory](02_Exercise_2_-_Setup_Azure_Data_Factory.md)

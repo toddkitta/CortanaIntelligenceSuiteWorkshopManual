@@ -14,7 +14,7 @@ This exercise has 5 tasks:
 
 ## Get out of Jail Free
 
-If, for whatever reason, you cannot complete this lab whether due to time contraints or if you are not able to troubleshoot an issue, we have created a "get out of jail free" exercise. If you wish to use this exercise at any time, please proceed to [Appendix B](10 Appendix B - Alternative to Data Factory Exercises.md). Please note that using this exercise will let you surpass all of the Azure Data Factory exercises. After completing Appendix B, you can continue to [Exercise 5](05 Exercise 5 - Summarize Data Using HDInsight Spark.md).
+If, for whatever reason, you cannot complete this lab whether due to time contraints or if you are not able to troubleshoot an issue, we have created a "get out of jail free" exercise. If you wish to use this exercise at any time, please proceed to [Appendix B](10_Appendix_B_-_Alternative_to_Data_Factory_Exercises.md). Please note that using this exercise will let you surpass all of the Azure Data Factory exercises. After completing Appendix B, you can continue to [Exercise 5](05_Exercise_5_-_Summarize_Data_Using_HDInsight_Spark.md).
 
 ## Task 1: Create Azure ML Linked Service
 
@@ -30,7 +30,7 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
     ![Screenshot](images/create_azure_ml_linked_service_2.png)
 1. Select **Azure ML** from the list.
 2. In the new window, be sure change the JSON file to match the following:
-    * Back in [Exercise 1, Task 9](01 Exercise 1 - Building a Machine Learning Model.md#task-9-deploy-web-service-and-note-api-information) you noted some values related to your ML web service. The value for **mlEndPoint**  below is your web service's **Batch Requests** URL (remembering to remove the query string), and **apiKey** is the **Primary Key** of your web service.
+    * Back in [Exercise 1, Task 9](01_Exercise_1_-_Building_a_Machine_Learning_Model.md#task-9-deploy-web-service-and-note-api-information) you noted some values related to your ML web service. The value for **mlEndPoint**  below is your web service's **Batch Requests** URL (remembering to remove the query string), and **apiKey** is the **Primary Key** of your web service.
 
     ```json
     {
@@ -178,4 +178,4 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
 1. You should start to see **Ready** status activity listed on the bottom of the new window.
 2. Close the **Monitor &amp; Manage** browser tab.
 
-Next Exercise: [Exercise 5 - Summarize Data Using HDInsight Spark](05 Exercise 5 - Summarize Data Using HDInsight Spark.md)
+Next Exercise: [Exercise 5 - Summarize Data Using HDInsight Spark](05_Exercise_5_-_Summarize_Data_Using_HDInsight_Spark.md)

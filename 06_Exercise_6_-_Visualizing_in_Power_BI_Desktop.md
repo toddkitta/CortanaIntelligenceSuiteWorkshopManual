@@ -128,4 +128,4 @@ This exercise has 4 tasks:
 
 1. You can save this Power BI report by click on Save icon from the top left corner of the screen.
 
-Next Exercise: [Exercise 7 - Deploy Intelligent Web App](07 Exercise 7 - Deploy Intelligent Web App.md)
+Next Exercise: [Exercise 7 - Deploy Intelligent Web App](07_Exercise_7_-_Deploy_Intelligent_Web_App.md)

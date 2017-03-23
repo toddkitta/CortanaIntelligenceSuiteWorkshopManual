@@ -6,7 +6,7 @@ Synopsis: In this exercise, attendees will implement Azure Data Factory pipeline
 
 ## Get out of Jail Free
 
-If, for whatever reason, you cannot complete this lab whether due to time contraints or if you are not able to troubleshoot an issue, we have created a "get out of jail free" exercise. If you wish to use this exercise at any time, please proceed to [Appendix B](10 Appendix B - Alternative to Data Factory Exercises.md). Please note that using this exercise will let you surpass all of the Azure Data Factory exercises. After completing Appendix B, you can continue to [Exercise 5](05 Exercise 5 - Summarize Data Using HDInsight Spark.md).
+If, for whatever reason, you cannot complete this lab whether due to time contraints or if you are not able to troubleshoot an issue, we have created a "get out of jail free" exercise. If you wish to use this exercise at any time, please proceed to [Appendix B](10_Appendix_B_-_Alternative_to_Data_Factory_Exercises.md). Please note that using this exercise will let you surpass all of the Azure Data Factory exercises. After completing Appendix B, you can continue to [Exercise 5](05_Exercise_5_-_Summarize_Data_Using_HDInsight_Spark.md).
 
 ## Task 1: Create Copy Pipeline Using the Copy Data Wizard
 
@@ -81,4 +81,4 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
 
     ![Screenshot](images/create_copy_pipeline_using_the_copy_data_wizard_12.png)
 
-Next Exercise: [Exercise 4 - Operationalize ML Scoring with Azure ML and Data Factory](04 Exercise 4 - Operationalize ML Scoring with Azure ML and Data Factory.md)
+Next Exercise: [Exercise 4 - Operationalize ML Scoring with Azure ML and Data Factory](04_Exercise_4_-_Operationalize_ML_Scoring_with_Azure_ML_and_Data_Factory.md)
