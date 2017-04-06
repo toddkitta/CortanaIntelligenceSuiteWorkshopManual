@@ -1,4 +1,4 @@
-# Exercise 7: Deploy Intelligent Web App
+# Exercise 2: Deploy Intelligent Web App
 
 Duration: 20 mins
 
@@ -22,5 +22,3 @@ Synopsis: In this exercise, attendees will deploy an intelligent web application
 
     ![Screenshot](images/deploy_web_app_from_github_2.png)
 1. **Congratulations!** You have built and deployed an intelligent system to Azure!
-
-Next Exercise: [Exercise 8 - Cleanup of Azure Resources](08_Exercise_8_-_Cleanup_of_Azure_Resources.md)
