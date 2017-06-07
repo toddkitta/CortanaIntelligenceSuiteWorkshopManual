@@ -8,13 +8,12 @@ This exercise has 9 tasks:
 
 * [Task 1: Create Azure Machine Learning Workspace](#task-1-create-azure-machine-learning-workspace)
 * [Task 2: Navigate to Machine Learning Studio](#task-2-navigate-to-machine-learning-studio)
-* [Task 3: Upload the Sample Datasets](#task-3-upload-the-sample-datasets)
-* [Task 4: Start a New Experiment](#task-4-start-a-new-experiment)
-* [Task 5: Prepare the Weather Data](#task-5-prepare-the-weather-data)
-* [Task 6: Join the Flight and Weather Datasets](#task-6-join-the-flight-and-weather-datasets)
-* [Task 7: Train the Model](#task-7-train-the-model)
-* [Task 8: Operationalize the Experiment](#task-8-operationalize-the-experiment)
-* [Task 9: Deploy Web Service and Note API Information](#task-9-deploy-web-service-and-note-api-information)
+* [Task 3: Start a New Experiment](#task-3-start-a-new-experiment)
+* [Task 4: Prepare the Weather Data](#task-4-prepare-the-weather-data)
+* [Task 5: Join the Flight and Weather Datasets](#task-5-join-the-flight-and-weather-datasets)
+* [Task 6: Train the Model](#task-6-train-the-model)
+* [Task 7: Operationalize the Experiment](#task-7-operationalize-the-experiment)
+* [Task 8: Deploy Web Service and Note API Information](#task-8-deploy-web-service-and-note-api-information)
 
 ## Get out of Jail Free
 
@@ -22,38 +21,29 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
 
 ## Task 1: Create Azure Machine Learning Workspace
 
-1. Blah
-1. Blah
+1. Navigate to [https://portal.azure.com](https://portal.azure.com) (we have had the best luck with Chrome).
+1. Click the green '+' on the top left of your screen and then search for **machine learning workspace** in the search box.
+
+    ![Screenshot](images/searchformlworkspace.png)
+
+1. In the search results, select **machine learning workspace** and click the **Create** button at the bottom of the resulting blade.
+
+    ![Screenshot](images/createmlworkspace.png)
+
+1. You will be presented with several options for your new workspace. Please enter *unique* (do not use the same values in the image below) and appropriate values for the fields indicated in the screenshot below. You will need to click on **Web service plan pricing tier** at the bottom before you can select the **DEVTEST** plan as shown below.
+
+    ![Screenshot](images/mlworkspaceoptions.png)
+
+1. Once your workspace options are configured, click **Create**. It should only take a minute or so before your workspace is ready and you are ready to move to Task 2.
 
 ## Task 2: Navigate to Machine Learning Studio
 
-1. In a browser, go to [https://studio.azureml.net](https://studio.azureml.net) and log in using the same account you used in the Azure portal to deploy the prerequisites for this workshop.
+1. Navigate to [https://studio.azureml.net](https://studio.azureml.net) (we have had the best luck with Chrome) and log in using the same account you used in the Azure portal to create the workspace.
 2. Once you are signed in, ensure the workspace that was created as part of the prerequisites is selected from the top bar. **Make sure** you select the correct workspace; if you do not you might run into issues in subsequent steps.
 
     ![Screenshot](images/choose_ml_workspace.png)
 
-## Task 3: Upload the Sample Datasets
-
-1. Before you begin creating a machine learning experiment, there are three datasets you need to load.
-2. Download the three CSV sample datasets from here: http://aka.ms/awtdata and save AdventureWorksTravelDatasets.zip to your Desktop.
-   - **Note:** You will need to unblock the zip file before extracting its files. Do this by right clicking on it, selecting **Properties**, and then unblocking the file in the resulting dialog.
-3. Extract the ZIP and verify you have the following files:
-   - FlightDelaysWithAirportCodes.csv
-   - FlightWeatherWithAirportCode.csv
-   - AirportCodeLocationClean.csv
-4. Click **+ NEW** at the bottom, point to **Dataset** , and select **From Local File**.
-
-    ![Screenshot](images/upload_the_sample_datasets_0.png)
-
-5. In the dialog that appears, click **Choose File** and browse to the **FlightDelaysWithAirportCodes.csv** file and click **OK**.
-6. Change the name of the dataset to **FlightDelaysWithAirportCodes**.
-7. Click on the check mark on the bottom right corner of the screen.
-
-    ![Screenshot](images/upload_the_sample_datasets_1.png)
-
-8. Repeat the previous step for the **FlightWeatherWithAirportCode.csv** and **AirportCodeLocationLookupClean.csv** setting the name for the dataset in a similar fashion.
-
-## Task 4: Start a New Experiment
+## Task 3: Start a New Experiment
 
 1. Click **+ NEW** in the command bar.
 2. In the options that appear, click **Blank Experiment**.
@@ -64,16 +54,21 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
 
     ![Screenshot](images/start_a_new_experiment_1.png)
 
-4. In the toolbar on the left, in the Search experiment items box, type the name of the dataset you created with flight delay data (FlightDelaysWithAirportCodes). You should see a component for it listed under **Saved Datasets** -> **My Datasets**.
-
-    ![Screenshot](images/start_a_new_experiment_2.png)
-
-5. Click and drag on the **FlightDelaysWithAirportCodes** to add it to the design surface.
+4. In the toolbar on the left, in the **Search experiment items** box, search for **import data**.
+5. Click and drag on the **Import Data** to add it to the design surface.
 
     ![Screenshot](images/start_a_new_experiment_3.png)
 
-6. Next, you will explore each of the datasets to understand what kind of cleanup (aka data munging) will be necessary.
-7. Hover over the output port of the **FlightDelaysWithAirportCodes** dataset.
+5. With this new module selected, its properties will be displayed in the properties panel on the right. Change the **Data source** drop down to **Web URL via HTTP** and paste the following URL in the **Data source URL** textbox.
+    - https://intelligenceworkshop.blob.core.windows.net/workshopfiles/FlightDelaysWithAirportCodes.csv
+
+5. Also make sure the **Data format** property is set to CSV and the **CSV or TSV has header row** and **Use cached results** checkboxes are checked.
+
+    ![Screenshot](images/importdataproperties1.png)
+
+6. Next, you will explore each of the datasets to understand what kind of cleanup (aka data wrangling) will be necessary.
+7. Run the experiment by clicking the **RUN** icon at the bottom. This will cause the data to be read from the URL. This should take a little more than a minute. You will know the experiment is finished running when a green checkmark appears on the **Import Data** module.
+7. Hover over the output port of the **Import Data** module.
 
     ![Screenshot](images/start_a_new_experiment_4.png)
 
@@ -94,7 +89,7 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
     1. Create a new column that represents the departure hour. This will be based on the **CRSDepTime** column.
     1. Trim down the list of columns needed to do the analysis at hand.
 
-12. In order to perform the aforementioned data manipulation tasks, you could use built-in Azure ML modules for each task or you could use a script (such as R or Python). Here, you will use R. To do this, add an **Execute R Script** (recall you can search for modules on the left) module beneath the flights dataset and connect the output of the dataset to the first input port (leftmost) of the **Execute R Script**.
+12. In order to perform the aforementioned data manipulation tasks, you could use built-in Azure ML modules for each task or you could use a script (such as R or Python). Here, you will use R. To do this, add an **Execute R Script** (recall you can search for modules on the left) module beneath the **Import Data** module and connect the output of the dataset to the first input port (leftmost) of the **Execute R Script**.
 
     ![Screenshot](images/ex01_connect_flightdelayswithairportcodes_to_r_module.png)
 
@@ -127,13 +122,20 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
 
 42. At this point the Flight Delay Data is prepared, and we turn to preparing the historical weather data.
 
-## Task 5: Prepare the Weather Data
+## Task 4: Prepare the Weather Data
 
-1. To the right of the **FlightDelaysWithAirportCodes** dataset, add the **FlightWeatherWithAirportCode** dataset.
+1. To the right of your original **Import Data** module, add another **Import Data** dataset. You can right click on each module and select **Edit Comment** if you want to indicate which **Import Data** module is which. This can cut down on confusion as to which **Import Data** module is getting which dataset.
 
     ![Screenshot](images/prepare_the_weather_data_0.png)
 
-2. Right click the output port of the **FlightWeatherWithAirportCode** dataset and select **Visualize**.
+1. Set the properties for this new **Import Data** module. Use the following URL for the *FlightWeatherWithAirportCode* dataset.
+    - https://intelligenceworkshop.blob.core.windows.net/workshopfiles/FlightWeatherWithAirportCode.csv
+
+1. After setting the properties as before, click the **RUN** icon at the bottom of the screen so that the data is read.
+
+    ![Screenshot](images/importdata2.png)
+
+2. Right click the output port of the second **Import Data** module and select **Visualize**.
 
     ![Screenshot](images/prepare_the_weather_data_1.png)
 
@@ -160,9 +162,9 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
     1. Change the data type of **AirportCode** to categorical.
     1. Reduce the number of columns in the dataset.
 
-12. Add an **Execute R Script** module beneath the weather dataset and connect the output of the dataset to the first input port (leftmost) of the **Execute R Script**.
+12. Add an **Execute R Script** module beneath the new **Import Data** module and connect the output of the dataset to the first input port (leftmost) of the **Execute R Script**.
 
-    ![Screenshot](images/ex01_connect_weather_to_r_module.png)
+    ![Screenshot](images/ex01_connect_flightdelayswithairportcodes_to_r_module.png)
 
 37. In the **Properties** panel for **Execute R Script**, click the "double window" icon to maximize the script editor.
 
@@ -213,7 +215,7 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
 
     ![Screenshot](images/ex01_data_viz_after_weather_r_module.png)
 
-## Task 6: Join the Flight and Weather Datasets
+## Task 5: Join the Flight and Weather Datasets
 
 1. With both datasets ready, we want to join them together so that we can associate historical flight delay with the weather data at departure time.
 2. Drag the **Join Data** module on to the design surface, beneath and centered between both **Execute R Script** modules. Connect the leftmost output port of the *left* **Execute R module** to leftmost input port of the **Join Data** module, and the leftmost output port of the *right* **Execute R Script** module to the rightmost input port of the **Join Data** module.
@@ -250,7 +252,7 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
 1. Run the experiment to update the metadata.
 1. Save your experiment.
 
-## Task 7: Train the Model
+## Task 6: Train the Model
 
 AdventureWorks Travel wants to build a model to predict if a departing flight will have a 15 minute or greater delay. In the historical data they have provided, the indicator for such a delay is found within DepDelay15 (where a value of 1 means delay, 0 means no delay). To create model that predicts such a binary outcome, we can choose from the various Two-Class modules that Azure ML offers. For our purposes, we begin with a Two-Class Logistic Regression. This type of classification module needs to be first trained on sample data that includes the features important to making a prediction and must also include the actual historical outcome for those features.
 
@@ -299,7 +301,7 @@ The typical pattern is split the historical data so a portion is shown to the mo
 
     ![Screenshot](images/train_the_model_9.png)
 
-## Task 8: Operationalize the Experiment
+## Task 7: Operationalize the Experiment
 
 1. Now that we have a functioning model, let's package it up into a predictive experiment that can be called as web service.
 2. In the command bar at the bottom, click **Set Up Web Service** and then select **Predictive Web Service**. If you see that the **Set Up Web Service** option is grayed out, then you may need to run the experiment again by click on the **RUN** button.
@@ -372,7 +374,7 @@ The typical pattern is split the historical data so a portion is shown to the mo
 
 1. Run the experiment. This may take a few minutes. Your experiment is now ready to be deployed as a web service!
 
-## Task 9: Deploy Web Service and Note API Information
+## Task 8: Deploy Web Service and Note API Information
 
 1. When the experiment is finished running, click **Deploy Web Service [New]** (*not* **[Classic]**). This will launch the web service deployment wizard.
 
