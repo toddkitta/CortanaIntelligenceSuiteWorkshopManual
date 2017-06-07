@@ -55,7 +55,7 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
     ![Screenshot](images/start_a_new_experiment_1.png)
 
 4. In the toolbar on the left, in the **Search experiment items** box, search for **import data**.
-5. Click and drag on the **Import Data** to add it to the design surface.
+5. Click and drag on the **Import Data** module to add it to the design surface.
 
     ![Screenshot](images/start_a_new_experiment_3.png)
 
@@ -124,7 +124,7 @@ If, for whatever reason, you cannot complete this lab whether due to time contra
 
 ## Task 4: Prepare the Weather Data
 
-1. To the right of your original **Import Data** module, add another **Import Data** dataset. You can right click on each module and select **Edit Comment** if you want to indicate which **Import Data** module is which. This can cut down on confusion as to which **Import Data** module is getting which dataset.
+1. To the right of your original **Import Data** module, add another **Import Data** dataset. You can right click on each module and select **Edit Comment** if you want to indicate which **Import Data** module is which. This can cut down on confusion as to which **Import Data** module is reading which dataset.
 
     ![Screenshot](images/prepare_the_weather_data_0.png)
 
