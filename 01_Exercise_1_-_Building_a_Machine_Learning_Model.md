@@ -6,7 +6,7 @@ Synopsis: In this exercise, attendees will implement a classification experiment
 
 This exercise has 9 tasks:
 
-* [Task 1: Connect to the Lab VM](#task-1-connect-to-the-lab-vm)
+* [Task 1: Create Azure Machine Learning Workspace](#task-1-create-azure-machine-learning-workspace)
 * [Task 2: Navigate to Machine Learning Studio](#task-2-navigate-to-machine-learning-studio)
 * [Task 3: Upload the Sample Datasets](#task-3-upload-the-sample-datasets)
 * [Task 4: Start a New Experiment](#task-4-start-a-new-experiment)
@@ -18,25 +18,12 @@ This exercise has 9 tasks:
 
 ## Get out of Jail Free
 
-If, for whatever reason, you cannot complete this lab whether due to time contraints or if you are not able to troubleshoot an issue, we have created a "get out of jail free" exercise. If you wish to use this exercise at any time, please proceed to [Appendix A](09_Appendix_A_-_Alternative_to_Azure_ML_Exercise.md). After completing Appendix A, you can continue to [Exercise 2](02_Exercise_2_-_Setup_Azure_Data_Factory.md).
+If, for whatever reason, you cannot complete this lab whether due to time contraints or if you are not able to troubleshoot an issue, we have created a "get out of jail free" exercise. If you wish to use this exercise at any time, please proceed to [Appendix A](09_Appendix_A_-_Alternative_to_Azure_ML_Exercise.md). After completing Appendix A, you can continue to [Exercise 2](02_Exercise_2_-_Deploy_Intelligent_Web_App.md).
 
-## Task 1: Connect to the Lab VM
+## Task 1: Create Azure Machine Learning Workspace
 
-1. From the left side of the Azure portal, click on **All resources**.
-2. In the **Filter items...** box, type in **lab**.
-3. Select your lab VM. Keep in mind the name of the virtual machine will begin with the "app name" you provided when setting up this workshop environment (in the prerequisite deployment).
-2. At the top of the blade for your VM, click on **Connect**.
-
-    ![Screenshot](images/connect_to_the_lab_vm_1.png)
-
-3. Download and open the RDP file.
-1. When the **Remote Desktop Connection** screen appears, check the **Don't ask me again...** box and click on **Connect** button.
-
-    ![Screenshot](images/ex02_connect_to_the_lab_vm_2.png)
-
-1. Log in with the following credentials:
-   - User name: **cortana**
-   - Password: **Password.1!!**
+1. Blah
+1. Blah
 
 ## Task 2: Navigate to Machine Learning Studio
 
@@ -408,4 +395,4 @@ The typical pattern is split the historical data so a portion is shown to the mo
 
     ![Screenshot](images/operationalize_the_experiment_21.png)
 
-Next Exercise: [Exercise 2 - Setup Azure Data Factory](02_Exercise_2_-_Setup_Azure_Data_Factory.md)
+Next Exercise: [Exercise 2 - Deploy Intelligent Web App](02_Exercise_2_-_Deploy_Intelligent_Web_App.md)
