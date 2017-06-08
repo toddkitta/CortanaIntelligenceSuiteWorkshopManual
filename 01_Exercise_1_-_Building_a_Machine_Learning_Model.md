@@ -337,6 +337,8 @@ The typical pattern is split the historical data so a portion is shown to the mo
 2. To add these fields back, begin by deleting the line between the **Score Model** and **Web service output**.
 3. Drag the **AirportCodeLocationLookupClean** dataset on to the design surface, positioning it below the Score Model module.
 
+    - https://intelligenceworkshop.blob.core.windows.net/workshopfiles/AirportCodeLocationLookupClean.csv
+
     ![Screenshot](images/operationalize_the_experiment_10.png)
 
 1. Add a **Join Data** module. Connect the output of the **Score Model** module to the leftmost input of the **Join Data** module and the output of the dataset to the rightmost input of the **Join Data** module.
