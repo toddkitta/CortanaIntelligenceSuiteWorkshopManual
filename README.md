@@ -1,6 +1,6 @@
 # Building Your First Azure Machine Learning Pipeline
 
-This tutorial has two exercises. First, you will create a machine learning model from scratch using Azure Machine Learning (Azure ML) and predefined data sets (historical flight data and historical weather data). This exercise also has you operationalizing your completed model as a web service that is callable from any other application. The second exercise will actually have you integrating the operationalized web service with a web application and deploying to Azure. 
+This tutorial has two exercises. First, you will create a machine learning model from scratch using Azure Machine Learning (Azure ML) using predefined data sets (historical flight data and historical weather data). In this exercise you will operationalize your completed ML model as a web service that can be called from any application. In the second exercise you will integrate the operationalized web service with a web application and deploy it to Azure.
 
 # Requirements
 
