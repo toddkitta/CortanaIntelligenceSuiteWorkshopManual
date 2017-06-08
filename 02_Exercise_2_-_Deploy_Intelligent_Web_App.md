@@ -12,7 +12,10 @@ Synopsis: In this exercise, attendees will deploy an intelligent web application
 1. On the following page, ensure the correct **Directory** and **Subscription** are selected.
 2. Select the **Resource Group** that you have been using throughout the workshop.
 3. Either keep the default **Site Name** or provide one that is globally unique and then choose a **Site Location**.
-4. Finally, enter the ML API and Weather API information. Recall that you recorded the ML API information back in Task 9 of [Exercise 1](01_Exercise_1_-_Building_a_Machine_Learning_Model.md). Also, recall that you obtained the Weather API key back in the prerequisite steps for the workshop ([http://aka.ms/cortanasetup](http://aka.ms/cortanasetup)).
+4. Finally, enter the ML API and Weather API information. Recall that you recorded the ML API information back in Task 9 of [Exercise 1](01_Exercise_1_-_Building_a_Machine_Learning_Model.md).
+    - For the Weather API Key you can use one of the following options:
+        - Obtain your own key from [https://www.wunderground.com/weather/api](https://www.wunderground.com/weather/api).
+        - Use this key: c6f748c7b798ba73
 5. Click **Next** and on the following screen, click **Deploy**.
 6. The page should begin deploying your application while showing you a status of what is currently happening.
 
