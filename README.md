@@ -1,6 +1,6 @@
 # Building Your First Azure Machine Learning Pipeline
 
-This tutorial has two exercises. First, you will create a machine learning model from scratch using Azure Machine Learning (Azure ML) using predefined data sets (historical flight data and historical weather data). In this exercise you will operationalize your completed ML model as a web service that can be called from any application. In the second exercise you will integrate the operationalized web service with a web application and deploy it to Azure.
+This tutorial has two exercises. First, you will create a machine learning model from scratch using Azure Machine Learning (Azure ML) and predefined data sets (historical flight data and historical weather data). In this exercise you will operationalize your completed ML model as a web service that can be called from any application. In the second exercise you will integrate the operationalized web service with a web application and deploy it to Azure.
 
 # Requirements
 
@@ -19,3 +19,5 @@ These exercises require an Azure subscription. If you do not have access to an A
 - [Machine learning algorithm cheat sheet for Microsoft Azure Machine Learning](https://docs.microsoft.com/en-us/azure/machine-learning/machine-learning-algorithm-cheat-sheet)
 - [Microsoft Team Data Science Process (TDSP)](https://azure.microsoft.com/en-us/documentation/learning-paths/data-science-process/)
 - [Cortana Intelligence Suite End-to-End Workshop on Microsoft Virtual Academy](https://mva.microsoft.com/en-us/training-courses/cortana-intelligence-suite-end-to-end-16972)
+- [Deep Learning Explained (edX course)](https://www.edx.org/course/deep-learning-explained-microsoft-dat236x)
+- [Machine Learning for Developers (Build 2017 session)](https://channel9.msdn.com/Events/Build/2017/B8068)
