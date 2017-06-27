@@ -17,7 +17,7 @@ These exercises require an Azure subscription. If you do not have access to an A
 - [Cortana Intelligence Gallery](https://gallery.cortanaintelligence.com/)
 - [Microsoft Professional Program for Data Science](https://academy.microsoft.com/en-us/professional-program/data-science/)
 - [Machine learning algorithm cheat sheet for Microsoft Azure Machine Learning](https://docs.microsoft.com/en-us/azure/machine-learning/machine-learning-algorithm-cheat-sheet)
-- [Microsoft Team Data Science Process (TDSP)](https://azure.microsoft.com/en-us/documentation/learning-paths/data-science-process/)
+- [Microsoft Team Data Science Process (TDSP)](https://github.com/Azure/Microsoft-TDSP)
 - [Cortana Intelligence Suite End-to-End Workshop on Microsoft Virtual Academy](https://mva.microsoft.com/en-us/training-courses/cortana-intelligence-suite-end-to-end-16972)
 - [Deep Learning Explained (edX course)](https://www.edx.org/course/deep-learning-explained-microsoft-dat236x)
 - [Machine Learning for Developers (Build 2017 session)](https://channel9.msdn.com/Events/Build/2017/B8068)
