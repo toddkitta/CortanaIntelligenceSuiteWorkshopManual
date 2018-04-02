@@ -335,7 +335,7 @@ The typical pattern is split the historical data so a portion is shown to the mo
 1. Because we have removed the latitude and longitude columns from the dataset (so they were not required as an input to the web service), we have to add them back in before we return the result so that the results can be easily visualized on a map.
 
 2. To add these fields back, begin by deleting the line between the **Score Model** and **Web service output**.
-3. Drag the **AirportCodeLocationLookupClean** dataset on to the design surface, positioning it below the Score Model module.
+3. Drag another **Import Data** module on to the design surface, positioning it below the **Score Model** module. Use the following URL as before.
 
     - https://intelligenceworkshop.blob.core.windows.net/workshopfiles/AirportCodeLocationLookupClean.csv
 
